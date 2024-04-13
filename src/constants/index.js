@@ -17,7 +17,6 @@ import {
     mit,
     soc,
     driver,
-    tripguide,
     threejs,
     pd,
   } from "../assets";
@@ -28,8 +27,8 @@ import {
       title: "About",
     },
     {
-      id: "work",
-      title: "Work",
+      id: "projects",
+      title: "Projects",
     },
     {
       id: "contact",
@@ -205,6 +204,16 @@ import {
     },
   ];
   
+  const blogs = [
+    {
+      name: "Coming Soon.",
+      description:
+        "Coming soon.",
+      image: pd,
+      source_code_link: "https://github.com/",
+    },
+  ];
+
   const projects = [
     {
       name: "Plant Doctor",
@@ -309,4 +318,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { services, technologies, experiences, testimonials, blogs, projects };

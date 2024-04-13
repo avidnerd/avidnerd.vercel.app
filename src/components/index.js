@@ -6,6 +6,7 @@ import Tech from './Tech';
 import Experience from './Experience';
 import Works from './Works';
 import Feedbacks from './Feedbacks';
+import Blog from './Blog';
 import Contact from './Contact';
 
 export {
@@ -13,6 +14,7 @@ export {
   Navbar,
   About,
   Tech,
+  Blog,
   Experience,
   Works,
   Feedbacks,
