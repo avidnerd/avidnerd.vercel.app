@@ -5,7 +5,7 @@ Hero, Navbar, Blog, Works, StarsCanvas } from './components';
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
+      <div className="relative z-0 bg-[#050a30]">
         <div className="bg-hero-pattern bg-cover bg-no-repeat
         bg-center">
           <Navbar />
