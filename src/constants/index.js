@@ -137,7 +137,7 @@ import {
       company_name: "STEM Outreach Club",
       icon: soc,
       iconBg: "#9cedff",
-      date: "Jan 2022 - Jan 2023",
+      date: "Feb 2024 - Present",
       points: [
         "Developing web applications using React.js and other related technologies for small businesses around the community.",
         "Organizing various STEM workshops, district-wide events, and coding classes to children.",
