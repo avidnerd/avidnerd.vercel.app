@@ -1,0 +1,312 @@
+import {
+    mobile,
+    backend,
+    creator,
+    web,
+    typescript,
+    html,
+    reactjs,
+    tailwind,
+    nodejs,
+    mongodb,
+    figma,
+    docker,
+    usaco,
+    kessler,
+    innoverge,
+    mit,
+    soc,
+    driver,
+    tripguide,
+    threejs,
+    pd,
+  } from "../assets";
+  
+  export const navLinks = [
+    {
+      id: "about",
+      title: "About",
+    },
+    {
+      id: "work",
+      title: "Work",
+    },
+    {
+      id: "contact",
+      title: "Contact",
+    },
+  ];
+  
+  const services = [
+    {
+      title: "Machine Learning Researcher",
+      icon: web,
+    },
+
+    {
+      title: "Competitive Programmer",
+      icon: mobile,
+    },
+
+    {
+      title: "Python Programmer and Web Developer",
+      icon: creator,
+    },
+
+    {
+      title: "Entrepreneur (coming soon)",
+      icon: backend,
+    },
+
+  ];
+  
+  const technologies = [
+    {
+      name: "Python",
+      icon: typescript,
+    },
+
+    {
+      name: "Java",
+      icon: figma,
+    },
+
+    {
+      name: "C++",
+      icon: docker,
+    },
+
+    {
+      name: "HTML 5",
+      icon: html,
+    },
+
+    {
+      name: "React JS",
+      icon: reactjs,
+    },
+
+    {
+      name: "Tailwind CSS",
+      icon: tailwind,
+    },
+    {
+      name: "Swift",
+      icon: nodejs,
+    },
+
+    {
+      name: "Three JS",
+      icon: threejs,
+    },
+    {
+      name: "django",
+      icon: mongodb,
+    },
+
+  ];
+  
+  const experiences = [
+    {
+      title: "Machine Learning Research Intern",
+      company_name: "Kessler Foundation",
+      icon: kessler,
+      iconBg: "#FFF",
+      date: "October 2023 - March 2024",
+      points: [
+        "Main role in project involving use of deep learning techniques to detect drowsiness/fatigue in drivers.",
+        "Main role in project involving the detection of cancer-related fatigue to improve rehabilitation therapy for cancer patients.",
+        "Involves writing a paper and presenting to a conference.",
+        "Demonstrates skill in Python data science modules as well as understanding of electroencephelography (EEG) signals.",
+      ],
+    },
+    {
+      title: "Regional Director",
+      company_name: "Innoverge",
+      icon: innoverge,
+      iconBg: "#c900a8",
+      date: "Feb 2024 - Present",
+      points: [
+        "Organization of STEMx workshops around my community.",
+        "Teacher and volunteer at these workshops",
+        "Main mission is to promote STEM education and make a difference!",
+      ],
+    },
+    {
+      title: "President & Founder",
+      company_name: "STEM Outreach Club",
+      icon: soc,
+      iconBg: "#9cedff",
+      date: "Jan 2022 - Jan 2023",
+      points: [
+        "Developing web applications using React.js and other related technologies for small businesses around the community.",
+        "Organizing various STEM workshops, district-wide events, and coding classes to children.",
+        "Organizing donations and fundraisers such as laptop donations and raising money for STEM ed organizations",
+      ],
+    },
+    {
+      title: "Competitive Programmer",
+      company_name: "USACO/Codeforces",
+      icon: usaco,
+      iconBg: "#E6DEDD",
+      date: "December 2023 - Present",
+      points: [
+        "Currently learning algorithms and data structures such as DFS, BFS, DP, prefix sums, binary search, stacks, queues, linked lists, trees, heaps, etc.",
+        "Gained experience solving technical problems and implementing algorithms under time pressure through competitions.",
+        "Currently competing in the USACO Bronze division (max I have gotten is 730 on a contest but I'm still working on it lol)",
+      ],
+    },
+    {
+      title: "Machine Learning Researcher",
+      company_name: "Massachusetts Institute of Technology",
+      icon: mit,
+      iconBg: "#E6DEDD",
+      date: "April 2024 - Present",
+      points: [
+        "Coming Soon!",
+      ],
+    },
+    {
+      title: "Founder and CEO",
+      company_name: "xxx",
+      icon: null,
+      iconBg: "#E6DEDD",
+      date: "April 2024 - Present",
+      points: [
+        "Coming Soon!",
+      ],
+    },
+  ];
+  
+  const testimonials = [
+    {
+      testimonial:
+        "The More I Learn, The More I Realize How Much I Don't Know.",
+      name: "Albert Einstein",
+      designation: "One",
+      company: "the Greatest Scientists of the 20th Century",
+      image: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQkJzGjwnMmbX6c3_xPYZv9g6MNRzUq6kJfuuCBldKsWjSQZ6pviVStsQtE8ybH8ZLzTzdRiorMrPVX0A4",
+    },
+    {
+      testimonial:
+        "I've never worked a day in my life. If you love what you do, it's not work.",
+      name: "Marion Jones",
+      designation: "World Champion",
+      company: "Track-and-Field",
+      image: "https://ca-times.brightspotcdn.com/dims4/default/6f1bb8d/2147483647/strip/true/crop/500x355+0+0/resize/1024x727!/format/webp/quality/75/?url=https%3A%2F%2Fwww.trbimg.com%2Fimg-52fcc7a8%2Fturbine%2Fsns-jones-marion-mug-jpg",
+    },
+    {
+      testimonial:
+        "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
+      name: "Thomas Edison",
+      designation: "Inventor",
+      company: "Many Things",
+      image: "https://images.inc.com/uploaded_files/image/1920x1080/getty_141551338_277941.jpg",
+    },
+  ];
+  
+  const projects = [
+    {
+      name: "Plant Doctor",
+      description:
+        "A bunch of nerds and I coded a machine learning model to detect over 10 different types of crop disease. We used the pretrained model VGG16.",
+      tags: [
+        {
+          name: "python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "html",
+          color: "green-text-gradient",
+        },
+        {
+          name: "sk-learn",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: pd,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "Driver Fatigue Detector",
+      description:
+        "Machine learning model that detects fatigue in drivers based on EEG data.",
+      tags: [
+        {
+          name: "python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "mne",
+          color: "green-text-gradient",
+        },
+        {
+          name: "sklearn",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: driver,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "Explore Millburn Website",
+      description:
+        "Coming soon!",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "nextjs",
+          color: "green-text-gradient",
+        },
+        {
+          name: "html",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: null,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "AMR Research @ MIT",
+      description:
+        "Coming soon!",
+      tags: [
+        {
+          name: "python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "html",
+          color: "green-text-gradient",
+        },
+        {
+          name: "chemprop",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: null,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "Avantrino",
+      description:
+        "Coming soon!",
+      tags: [
+        {
+          name: "open-ai",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "python",
+          color: "green-text-gradient",
+        },
+      ],
+      image: null,
+      source_code_link: "https://github.com/",
+    },
+  ];
+  
+  export { services, technologies, experiences, testimonials, projects };
