@@ -52,12 +52,11 @@ const About = () => {
         className='mt-4 text-secondary text-[17px]
         max-w-3xl leading-[30px]'
       >
-        I'm a 16 year old who aspires to one day work at a FAANG
-        company as a machine learning engineer or computer
-        scientist. I am also passionate about research and the 
-        applications of machine learning to biology/biotech. 
-        I have extensive experience in Python and Java, surface level experience in HTML, CSS, React, Node.js, 
-        and Three.js, and a rudimentary understanding
+        I'm a 16 year old who aspires to be an innovator, researcher,
+        and a machine learning engineer. I love research and an interested
+        in the applications of machine learning to biology/biotech. 
+        I have extensive experience in Python and Java, surface level experience in HTML, CSS, and
+        React, and a rudimentary understanding
         of algorithms/competitive programming.
       </motion.p>
 
