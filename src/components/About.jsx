@@ -45,7 +45,7 @@ const About = () => {
         <p className={ styles.sectionSubText }>
           Introduction</p>
         <h2 className= { styles.sectionHeadText }>
-          Overview.</h2>
+          About Me.</h2>
       </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
@@ -53,7 +53,7 @@ const About = () => {
         max-w-3xl leading-[30px]'
       >
         I'm a 16 year old who aspires to be an innovator, researcher,
-        and a machine learning engineer. I love research and an interested
+        and a machine learning engineer. I love research and am interested
         in the applications of machine learning to biology/biotech. 
         I have extensive experience in Python and Java, surface level experience in HTML, CSS, and
         React, and a rudimentary understanding

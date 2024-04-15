@@ -22,18 +22,18 @@ import {
   } from "../assets";
   
   export const navLinks = [
-    {
-      id: "about",
-      title: "About",
-    },
-    {
-      id: "projects",
-      title: "Projects",
-    },
-    {
-      id: "contact",
-      title: "Contact",
-    },
+    // {
+    //   id: "about",
+    //   title: "About",
+    // },
+    // {
+    //   id: "projects",
+    //   title: "Projects",
+    // },
+    // {
+    //   id: "contact",
+    //   title: "Contact",
+    // },
   ];
   
   const services = [
