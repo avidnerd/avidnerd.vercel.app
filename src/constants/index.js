@@ -52,10 +52,10 @@ import {
       icon: creator,
     },
 
-    {
-      title: "Entrepreneur (coming soon)",
-      icon: backend,
-    },
+    // {
+    //   title: "Entrepreneur (coming soon)",
+    //   icon: backend,
+    // },
 
   ];
   
@@ -165,16 +165,16 @@ import {
         "Coming Soon!",
       ],
     },
-    {
-      title: "Founder and CEO",
-      company_name: "xxx",
-      icon: null,
-      iconBg: "#E6DEDD",
-      date: "April 2024 - Present",
-      points: [
-        "Coming Soon!",
-      ],
-    },
+    // {
+    //   title: "Founder and CEO",
+    //   company_name: "xxx",
+    //   icon: null,
+    //   iconBg: "#E6DEDD",
+    //   date: "April 2024 - Present",
+    //   points: [
+    //     "Coming Soon!",
+    //   ],
+    // },
   ];
   
   const testimonials = [
