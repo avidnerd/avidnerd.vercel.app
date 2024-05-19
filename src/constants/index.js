@@ -207,9 +207,9 @@ import {
   
   const blogs = [
     {
-      name: "Coming Soon.",
+      name: "HackMHS IX",
       description:
-        "Coming soon.",
+        "I recently participated in our school hackathon with a bunch of my friends. It was quite the experience (we stayed up until 4 am because we had this really annoying bug. Our project was MediScribe, which is a way to streamline doctor-patient visits by having our product recod each visit and summarize the patient symptoms, doctor advice, and action that needed to be taken for both doctor and patient. We came across a lot of challenges (literally took 6 hours to come up with an idea), but overall I'm happy with our project (we ended up placing in the top three within our category), and it could definitely expand into a real product! I am so ready for our next hackathon (so hyped for PennApps!!)",
       image: pd,
       source_code_link: "https://github.com/",
     },
