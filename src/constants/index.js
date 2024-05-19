@@ -19,6 +19,7 @@ import {
     driver,
     threejs,
     pd,
+    mdscribe,
   } from "../assets";
   
   export const navLinks = [
@@ -314,6 +315,27 @@ import {
         },
       ],
       image: null,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "MediScribe",
+      description:
+        "A bunch of nerds and I made a software platform to act as a scribe for doctor-patient appointments. It listens to the visit and generates a report of the discussion, including patient symptoms, doctor diagnosis, and action needed to be taken.",
+      tags: [
+        {
+          name: "llama",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "streamlit",
+          color: "green-text-gradient",
+        },
+        {
+          name: "openai",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: mdscribe,
       source_code_link: "https://github.com/",
     },
   ];

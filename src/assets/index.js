@@ -28,6 +28,7 @@ import innoverge from "./company/innoverge.png";
 import mit from "./company/mit.png"
 
 import pd from "./plant_doctor.png";
+import mdscribe from '/mediscribe.png'
 import driver from "./driver_fat.png";
 import tripguide from "./tripguide.png";
 
@@ -59,6 +60,7 @@ export {
   innoverge,
   mit,
   pd,
+  mdscribe,
   driver,
   tripguide,
 };
