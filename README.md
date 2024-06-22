@@ -1,4 +1,4 @@
-# React + Vite
+# avidnerd.vercel.app
 
 
 URL is avidnerd.vercel.app
