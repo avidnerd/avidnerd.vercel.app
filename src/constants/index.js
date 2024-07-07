@@ -304,17 +304,21 @@ import {
       source_code_link: "https://github.com/",
     },
     {
-      name: "Avantrino",
+      name: "Veridico",
       description:
-        "Coming soon!",
+        "Coming soon! hehehehehe ",
       tags: [
         {
-          name: "open-ai",
+          name: "nlp",
           color: "blue-text-gradient",
         },
         {
-          name: "python",
+          name: "javascript",
           color: "green-text-gradient",
+        },
+        {
+          name: "chromefordev",
+          color: "pink-text-gradient",
         },
       ],
       image: null,
