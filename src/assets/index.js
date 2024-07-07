@@ -31,6 +31,7 @@ import pd from "./plant_doctor.png";
 import mdscribe from './mediscribe.png'
 import driver from "./driver_fat.png";
 import tripguide from "./tripguide.png";
+import explore_msh from "./explore_millburn.png";
 
 export {
   logo,
@@ -61,6 +62,7 @@ export {
   mit,
   pd,
   mdscribe,
+  explore_msh,
   driver,
   tripguide,
 };

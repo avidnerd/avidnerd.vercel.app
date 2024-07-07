@@ -20,6 +20,7 @@ import {
     threejs,
     pd,
     mdscribe,
+    explore_msh,
   } from "../assets";
   
   export const navLinks = [
@@ -261,7 +262,7 @@ import {
     {
       name: "Explore Millburn Website",
       description:
-        "Coming soon!",
+        "As part of the STEM Outreach Club, some club members and I helped improve the township's public art website by creating an interactive 'trail', in order to help promote Millburn's public art program!",
       tags: [
         {
           name: "react",
@@ -276,8 +277,8 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: null,
-      source_code_link: "https://github.com/",
+      image: explore_msh,
+      source_code_link: "https://exploremillburnshorthills.org/public-art/public-art-trail/",
     },
     {
       name: "AMR Research @ MIT",
