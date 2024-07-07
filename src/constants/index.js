@@ -265,11 +265,11 @@ import {
         "As part of the STEM Outreach Club, some club members and I helped improve the township's public art website by creating an interactive 'trail', in order to help promote Millburn's public art program!",
       tags: [
         {
-          name: "react",
+          name: "wordpress",
           color: "blue-text-gradient",
         },
         {
-          name: "nextjs",
+          name: "javascript",
           color: "green-text-gradient",
         },
         {
