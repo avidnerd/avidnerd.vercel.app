@@ -164,7 +164,9 @@ import {
       iconBg: "#E6DEDD",
       date: "April 2024 - Present",
       points: [
-        "Coming Soon!",
+        "For my 2024-2025 research project, I am working with the Collins Lab at MIT to use a novel ensemble ML model to design de novo drug candidates effective against Methicillin Resistant Staphylococcus Aureus.",
+        "My solution will incorporate explainability in order to understand the mechanisms of the produced drug candidates.",
+        "I am also developing an in vivo efficacy predictor to reduce the drug development timeline."
       ],
     },
     // {
