@@ -33,6 +33,9 @@ import driver from "./driver_fat.png";
 import tripguide from "./tripguide.png";
 import explore_msh from "./explore_millburn.png";
 
+// Sky pictures
+import sky1 from "./1.jpeg";
+
 export {
   logo,
   backend,
@@ -65,4 +68,5 @@ export {
   explore_msh,
   driver,
   tripguide,
+  sky1,
 };

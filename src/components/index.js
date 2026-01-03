@@ -8,6 +8,7 @@ import Works from './Works';
 import Feedbacks from './Feedbacks';
 import Blog from './Blog';
 import Contact from './Contact';
+import Hobbies from './Hobbies';
 
 export {
   Hero,
@@ -19,6 +20,7 @@ export {
   Works,
   Feedbacks,
   Contact,
+  Hobbies,
   EarthCanvas, 
   BallCanvas, 
   ComputersCanvas, 

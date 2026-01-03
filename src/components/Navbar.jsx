@@ -37,9 +37,15 @@ const Navbar = () => {
             <li
               key={Link.id}
               className={`${ active === Link.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(Link.title)}
+              onClick={() => {
+                setActive(Link.title);
+                const element = document.getElementById(Link.id);
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
-              <a href={'#${Link.id}'}>{Link.title}</a>
+              <a href={`#${Link.id}`}>{Link.title}</a>
             </li>
           ))}
         </ul>
@@ -70,9 +76,13 @@ const Navbar = () => {
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(Link.title);
+                    const element = document.getElementById(Link.id);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
                   }}
                 >
-                  <a href={'#${Link.id}'}>{Link.title}</a>
+                  <a href={`#${Link.id}`}>{Link.title}</a>
                 </li>
               ))}
             </ul>
