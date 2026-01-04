@@ -118,7 +118,7 @@ const OboeSection = () => {
   return (
     <div className="mt-10">
       <h3 className="text-white text-[24px] font-bold mb-5">Oboe</h3>
-      <div className="relative max-w-2xl mx-auto" style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}>
+      <div className="relative max-w-2xl" style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}>
         {/* Player container - relative positioning for absolute children */}
         <div className="relative w-full">
           {/* Base player image */}
@@ -135,7 +135,7 @@ const OboeSection = () => {
             Example: top-[12%] left-[8%] right-[8%] bottom-[48%]
           */}
           <div 
-            className="absolute top-[15%] left-[9%] right-[8%] bottom-[54%] overflow-hidden"
+            className="absolute top-[6%] left-[6%] right-[6%] bottom-[47%] overflow-hidden"
             style={{
               // You can also use specific pixel values here if percentages don't work well
               // top: '60px', left: '40px', right: '40px', bottom: '200px'
@@ -199,7 +199,7 @@ const OboeSection = () => {
             Example: bottom: '180px' or bottom-[35%]
           */}
           <div 
-            className="absolute bottom-[35%] left-[10%] right-[10%] text-center"
+            className="absolute bottom-[25%] left-[10%] right-[10%] text-center"
           >
             <h3 className="text-white font-bold text-[18px] mb-1 truncate">{currentVideo.title}</h3>
             <p className="text-secondary text-[12px] truncate">{currentVideo.description}</p>
@@ -216,7 +216,7 @@ const OboeSection = () => {
           {/* Previous button */}
           <button
             onClick={prevVideo}
-            className="absolute bottom-[15%] left-[20%] w-12 h-12 hover:scale-110 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[15%] left-[20%] w-20 h-20 hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Previous video"
           >
             <img src={prevBtn} alt="Previous" className="w-full h-full object-contain" />
@@ -225,7 +225,7 @@ const OboeSection = () => {
           {/* Play/Pause button */}
           <button
             onClick={togglePlayPause}
-            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-14 h-14 hover:scale-110 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-24 h-24 hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             <img 
@@ -238,7 +238,7 @@ const OboeSection = () => {
           {/* Next button */}
           <button
             onClick={nextVideo}
-            className="absolute bottom-[15%] right-[20%] w-12 h-12 hover:scale-110 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[15%] right-[20%] w-20 h-20 hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Next video"
           >
             <img src={nextBtn} alt="Next" className="w-full h-full object-contain" />
