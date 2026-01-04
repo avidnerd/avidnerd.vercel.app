@@ -342,20 +342,30 @@ const ArtGallery = () => {
           <img
             src={frame}
             alt="Frame"
-            className="absolute inset-0 w-full h-full object-contain"
+            className="absolute inset-0 w-full h-full object-contain z-0"
           />
-          {/* Art image - overlay on top of frame */}
+          {/* Art image - overlay on top of frame, positioned to fit inside frame opening */}
           <motion.div
             key={currentIndex}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="absolute inset-0 flex items-center justify-center"
+            className="absolute inset-[10%] flex items-center justify-center z-10"
+            style={{
+              // Adjust these percentages to match your frame's inner opening
+              // Increase the percentage for more border, decrease for less
+            }}
           >
             <img
               src={currentArt.image}
               alt={`Art ${currentArt.id}`}
               className="w-full h-full object-contain"
+              style={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                width: 'auto',
+                height: 'auto',
+              }}
             />
           </motion.div>
         </div>
