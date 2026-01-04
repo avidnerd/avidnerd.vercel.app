@@ -317,79 +317,98 @@ const MemoryAthleticsCard = () => {
 };
 
 const ArtGallery = () => {
-  const [selectedArt, setSelectedArt] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextArt = () => {
+    setCurrentIndex((prev) => (prev + 1) % artImages.length);
+  };
+
+  const prevArt = () => {
+    setCurrentIndex((prev) => (prev - 1 + artImages.length) % artImages.length);
+  };
+
+  const currentArt = artImages[currentIndex];
 
   return (
     <div>
       <h3 className="text-white text-[24px] font-bold mb-5">Art Gallery</h3>
       <p className="text-secondary text-[17px] mb-8">
-        Some of my artwork
+        Click on the artwork to see the next piece
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {artImages.map((art, index) => (
+      <div className="relative max-w-2xl mx-auto">
+        {/* Single frame container */}
+        <div className="relative w-full aspect-square cursor-pointer" onClick={nextArt}>
+          {/* Frame - base layer */}
+          <img
+            src={frame}
+            alt="Frame"
+            className="absolute inset-0 w-full h-full object-contain"
+          />
+          {/* Art image - overlay on top of frame */}
           <motion.div
-            key={art.id}
-            variants={fadeIn("up", "spring", index * 0.1, 0.75)}
-            className="relative group cursor-pointer"
-            onClick={() => setSelectedArt(art)}
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="absolute inset-0 flex items-center justify-center"
           >
-            <div className="relative w-full aspect-square">
-              {/* Frame */}
-              <img
-                src={frame}
-                alt="Frame"
-                className="absolute inset-0 w-full h-full object-contain z-10"
-              />
-              {/* Art image inside frame */}
-              <div className="absolute inset-[8%] overflow-hidden">
-                <img
-                  src={art.image}
-                  alt={`Art ${art.id}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Modal for selected art */}
-      {selectedArt && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedArt(null)}
-        >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="max-w-4xl w-full bg-tertiary rounded-2xl p-6"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative w-full aspect-square">
-              {/* Frame */}
-              <img
-                src={frame}
-                alt="Frame"
-                className="absolute inset-0 w-full h-full object-contain z-10"
-              />
-              {/* Art image inside frame */}
-              <div className="absolute inset-[8%] overflow-hidden">
-                <img
-                  src={selectedArt.image}
-                  alt={`Art ${selectedArt.id}`}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
-            <button
-              onClick={() => setSelectedArt(null)}
-              className="mt-4 w-full bg-black-100 text-white py-2 rounded-lg hover:bg-opacity-80 transition-all"
-            >
-              Close
-            </button>
+            <img
+              src={currentArt.image}
+              alt={`Art ${currentArt.id}`}
+              className="w-full h-full object-contain"
+            />
           </motion.div>
         </div>
-      )}
+
+        {/* Navigation controls */}
+        <div className="flex items-center justify-center gap-6 mt-6">
+          <button
+            onClick={prevArt}
+            className="w-12 h-12 rounded-full bg-black-100 hover:bg-opacity-80 flex items-center justify-center transition-all group"
+            aria-label="Previous art"
+          >
+            <svg
+              className="w-6 h-6 text-white group-hover:scale-110 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Art indicators */}
+          <div className="flex gap-2">
+            {artImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === currentIndex 
+                    ? "w-8 bg-white" 
+                    : "w-2 bg-secondary bg-opacity-50 hover:bg-opacity-75"
+                }`}
+                aria-label={`Go to art ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={nextArt}
+            className="w-12 h-12 rounded-full bg-black-100 hover:bg-opacity-80 flex items-center justify-center transition-all group"
+            aria-label="Next art"
+          >
+            <svg
+              className="w-6 h-6 text-white group-hover:scale-110 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
