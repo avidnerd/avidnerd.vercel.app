@@ -225,7 +225,7 @@ const OboeSection = () => {
           {/* Play/Pause button */}
           <button
             onClick={togglePlayPause}
-            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-24 h-24 hover:scale-110 transition-transform cursor-pointer z-10"
+            className="scale-150 absolute bottom-[15%] left-1/2 -translate-x-1/2 w-24 h-24 hover:scale-160 transition-transform cursor-pointer z-10"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             <img 
