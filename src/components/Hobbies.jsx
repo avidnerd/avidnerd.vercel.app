@@ -85,17 +85,17 @@ const oboeVideos = [
 ];
 
 const artImages = [
-  { id: 1, image: art1, scale: 0.9, inset: "12%" }, // Custom scale and inset for each artwork
-  { id: 2, image: art2, scale: 0.85, inset: "12%" },
-  { id: 3, image: art3, scale: 0.9, inset: "12%" },
-  { id: 4, image: art4, scale: 0.88, inset: "12%" },
-  { id: 5, image: art5, scale: 0.9, inset: "12%" },
-  { id: 6, image: art6, scale: 0.85, inset: "12%" },
-  { id: 7, image: art7, scale: 0.9, inset: "12%" },
-  { id: 9, image: art9, scale: 0.88, inset: "12%" },
-  { id: 10, image: art10, scale: 0.9, inset: "12%" },
-  { id: 11, image: art11, scale: 0.85, inset: "12%" },
-  { id: 12, image: art12, scale: 0.9, inset: "12%" },
+  { id: 1, image: art1, scale: 0.51, inset: "12%" }, // Custom scale and inset for each artwork
+  { id: 2, image: art2, scale: 0.51, inset: "12%" },
+  { id: 3, image: art3, scale: 0.69, inset: "12%" },
+  { id: 4, image: art4, scale: 0.51, inset: "12%" },
+  { id: 5, image: art5, scale: 0.64, inset: "12%" },
+  { id: 6, image: art6, scale: 0.51, inset: "12%" },
+  { id: 7, image: art7, scale: 0.59, inset: "12%" },
+  { id: 9, image: art9, scale: 0.65, inset: "12%" },
+  { id: 10, image: art10, scale: 0.51, inset: "12%" },
+  { id: 11, image: art11, scale: 0.51, inset: "12%" },
+  { id: 12, image: art12, scale: 0.53, inset: "12%" },
 ];
 
 
