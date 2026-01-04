@@ -335,7 +335,7 @@ const ArtGallery = () => {
       <p className="text-secondary text-[17px] mb-8">
         Click on the artwork to see the next piece
       </p>
-      <div className="relative max-w-4xl mx-auto" style={{ transform: 'scale(1.2)' }}>
+      <div className="relative max-w-4xl mx-auto -mt-8" style={{ transform: 'scale(1.2)' }}>
         {/* Single frame container */}
         <div className="relative w-full aspect-square cursor-pointer" onClick={nextArt}>
           {/* Frame - base layer */}
