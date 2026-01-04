@@ -9,8 +9,8 @@ const Earth = () => {
   return (
     <primitive
       object={earth.scene}
-      scale={2.5}
-      position-y={0}
+      scale={1.5}
+      position-y={-1}
       rotation-y={0}
     />
   )
@@ -26,7 +26,7 @@ const EarthCanvas = () => {
         fov: 45,
         near: 0.1,
         far: 200,
-        position: [-4, 3, 6]
+        position: [-4, 0, 6]
       }}
     >
       <Suspense fallback={<CanvasLoader />}>

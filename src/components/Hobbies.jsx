@@ -207,7 +207,7 @@ const OboeSection = () => {
           
           <button
             onClick={prevVideo}
-            className="absolute bottom-[15%] left-[20%] w-[200px] h-[200px] hover:scale-110 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[15%] left-[15%] w-[80px] h-[80px] hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Previous video"
           >
             <img src={prevBtn} alt="Previous" className="w-full h-full object-contain" />
@@ -215,7 +215,7 @@ const OboeSection = () => {
 
           <button
             onClick={togglePlayPause}
-            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-[240px] h-[240px] hover:scale-110 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-[100px] h-[100px] hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             <img 
@@ -227,7 +227,7 @@ const OboeSection = () => {
 
           <button
             onClick={nextVideo}
-            className="absolute bottom-[15%] right-[20%] w-[200px] h-[200px] hover:scale-110 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[15%] right-[15%] w-[80px] h-[80px] hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Next video"
           >
             <img src={nextBtn} alt="Next" className="w-full h-full object-contain" />
