@@ -442,4 +442,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, blogs, projects, awards };
+  export { services, technologies, experiences, testimonials, projects, awards };
