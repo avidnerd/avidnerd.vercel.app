@@ -29,7 +29,19 @@ import {
   njas, 
   book, 
   pink, 
-  naro 
+  naro,
+  art1,
+  art2,
+  art3,
+  art4,
+  art5,
+  art6,
+  art7,
+  art9,
+  art10,
+  art11,
+  art12,
+  frame
 } from "../assets";
 
 const oboeVideos = [
@@ -72,39 +84,18 @@ const oboeVideos = [
   }
 ];
 
-const memoryStats = [
-  {
-    id: 1,
-    title: "Speed Cards",
-    value: "52 cards",
-    time: "2:30",
-    description: "Memorized a full deck in 2 minutes 30 seconds",
-    color: "blue-text-gradient",
-  },
-  {
-    id: 2,
-    title: "Binary Numbers",
-    value: "1000 digits",
-    time: "15:00",
-    description: "Memorized 1000 binary digits in 15 minutes",
-    color: "green-text-gradient",
-  },
-  {
-    id: 3,
-    title: "Random Words",
-    value: "200 words",
-    time: "10:00",
-    description: "Memorized 200 random words in 10 minutes",
-    color: "pink-text-gradient",
-  },
-  {
-    id: 4,
-    title: "Numbers",
-    value: "500 digits",
-    time: "12:00",
-    description: "Memorized 500 random digits in 12 minutes",
-    color: "orange-text-gradient",
-  },
+const artImages = [
+  { id: 1, image: art1 },
+  { id: 2, image: art2 },
+  { id: 3, image: art3 },
+  { id: 4, image: art4 },
+  { id: 5, image: art5 },
+  { id: 6, image: art6 },
+  { id: 7, image: art7 },
+  { id: 9, image: art9 },
+  { id: 10, image: art10 },
+  { id: 11, image: art11 },
+  { id: 12, image: art12 },
 ];
 
 
@@ -167,13 +158,13 @@ const OboeSection = () => {
   const videoId = getYouTubeVideoId(currentVideo.youtubeUrl);
   const thumbnail = getYouTubeThumbnail(currentVideo.youtubeUrl);
   
-  const scale = 0.7;
+  const scale = 0.65;
 
   return (
     <div className="mt-10">
       <h3 className="text-white text-[24px] font-bold mb-5">Oboe</h3>
       <p className="text-secondary text-[17px] mb-8">
-        Oboe covers I've made in my free time!
+        I like to make oboe covers in my free time, play this player to see some of my favorite covers!
       </p>
       <div className="relative max-w-2xl" style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}>
         <div className="relative w-full">
@@ -277,20 +268,15 @@ const OboeSection = () => {
           </button>
         </div>
       </div>
-      <p className="text-secondary text-[17px] mt-6 max-w-2xl">
-        I like to make oboe covers in my free time, play this player to see some covers.
-      </p>
     </div>
   );
 };
 
-const MemoryAthleticsCard = ({ stat, index }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
+const MemoryAthleticsCard = () => {
   return (
     <motion.div
-      variants={fadeIn("up", "spring", index * 0.2, 0.75)}
-      className="w-full sm:w-[280px]"
+      variants={fadeIn("up", "spring", 0.2, 0.75)}
+      className="w-full max-w-2xl mx-auto"
     >
       <Tilt
         options={{
@@ -300,49 +286,111 @@ const MemoryAthleticsCard = ({ stat, index }) => {
         }}
         className="w-full"
       >
-        <div
-          className="bg-tertiary p-6 rounded-2xl cursor-pointer h-[200px] relative"
-          onClick={() => setIsFlipped(!isFlipped)}
-          style={{ perspective: "1000px" }}
-        >
-          <motion.div
-            animate={{ rotateY: isFlipped ? 180 : 0 }}
-            transition={{ duration: 0.6 }}
-            style={{ transformStyle: "preserve-3d" }}
-            className="relative w-full h-full"
-          >
-            {/* Front */}
-            <div
-              className="absolute inset-0"
-              style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
-            >
-              <h3 className={`text-[24px] font-bold ${stat.color} mb-2`}>
-                {stat.title}
-              </h3>
-              <p className="text-white text-[32px] font-bold mb-2">{stat.value}</p>
-              <p className="text-secondary text-[16px]">{stat.time}</p>
+        <div className="bg-tertiary p-8 rounded-2xl">
+          <h3 className="text-white text-[28px] font-bold mb-6 text-center">Memory Athletics</h3>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="text-center">
+              <p className="text-secondary text-[14px] mb-2">Speed Cards</p>
+              <p className="text-white text-[24px] font-bold">2:30</p>
+              <p className="text-secondary text-[12px] mt-1">52 cards</p>
             </div>
-
-            {/* Back */}
-            <div
-              className="absolute inset-0"
-              style={{
-                backfaceVisibility: "hidden",
-                WebkitBackfaceVisibility: "hidden",
-                transform: "rotateY(180deg)",
-              }}
-            >
-              <h3 className={`text-[24px] font-bold ${stat.color} mb-4`}>
-                {stat.title}
-              </h3>
-              <p className="text-secondary text-[14px] leading-relaxed">
-                {stat.description}
-              </p>
+            <div className="text-center">
+              <p className="text-secondary text-[14px] mb-2">Binary Numbers</p>
+              <p className="text-white text-[24px] font-bold">15:00</p>
+              <p className="text-secondary text-[12px] mt-1">1000 digits</p>
             </div>
-          </motion.div>
+            <div className="text-center">
+              <p className="text-secondary text-[14px] mb-2">Random Words</p>
+              <p className="text-white text-[24px] font-bold">10:00</p>
+              <p className="text-secondary text-[12px] mt-1">200 words</p>
+            </div>
+            <div className="text-center">
+              <p className="text-secondary text-[14px] mb-2">Numbers</p>
+              <p className="text-white text-[24px] font-bold">12:00</p>
+              <p className="text-secondary text-[12px] mt-1">500 digits</p>
+            </div>
+          </div>
         </div>
       </Tilt>
     </motion.div>
+  );
+};
+
+const ArtGallery = () => {
+  const [selectedArt, setSelectedArt] = useState(null);
+
+  return (
+    <div>
+      <h3 className="text-white text-[24px] font-bold mb-5">Art Gallery</h3>
+      <p className="text-secondary text-[17px] mb-8">
+        Some of my artwork
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {artImages.map((art, index) => (
+          <motion.div
+            key={art.id}
+            variants={fadeIn("up", "spring", index * 0.1, 0.75)}
+            className="relative group cursor-pointer"
+            onClick={() => setSelectedArt(art)}
+          >
+            <div className="relative w-full aspect-square">
+              {/* Frame */}
+              <img
+                src={frame}
+                alt="Frame"
+                className="absolute inset-0 w-full h-full object-contain z-10"
+              />
+              {/* Art image inside frame */}
+              <div className="absolute inset-[8%] overflow-hidden">
+                <img
+                  src={art.image}
+                  alt={`Art ${art.id}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Modal for selected art */}
+      {selectedArt && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedArt(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="max-w-4xl w-full bg-tertiary rounded-2xl p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative w-full aspect-square">
+              {/* Frame */}
+              <img
+                src={frame}
+                alt="Frame"
+                className="absolute inset-0 w-full h-full object-contain z-10"
+              />
+              {/* Art image inside frame */}
+              <div className="absolute inset-[8%] overflow-hidden">
+                <img
+                  src={selectedArt.image}
+                  alt={`Art ${selectedArt.id}`}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+            <button
+              onClick={() => setSelectedArt(null)}
+              className="mt-4 w-full bg-black-100 text-white py-2 rounded-lg hover:bg-opacity-80 transition-all"
+            >
+              Close
+            </button>
+          </motion.div>
+        </div>
+      )}
+    </div>
   );
 };
 
@@ -510,16 +558,15 @@ const Hobbies = () => {
         <SkyGallery />
       </div>
 
-      <div className="mt-20">
-        <h3 className="text-white text-[24px] font-bold mb-5">Memory Athletics</h3>
-        <p className="text-secondary text-[17px] mb-8">
-          Click on the cards to see more details about my memory training achievements
-        </p>
-        <div className="flex flex-wrap gap-7 justify-center">
-          {memoryStats.map((stat, index) => (
-            <MemoryAthleticsCard key={stat.id} stat={stat} index={index} />
-          ))}
+      <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <h3 className="text-white text-[24px] font-bold mb-5">Memory Athletics</h3>
+          <p className="text-secondary text-[17px] mb-8">
+            My memory training achievements and times
+          </p>
+          <MemoryAthleticsCard />
         </div>
+        <ArtGallery />
       </div>
     </>
   );

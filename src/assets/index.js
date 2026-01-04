@@ -62,6 +62,20 @@ import pauseBtn from "./pause.png";
 import nextBtn from "./next.png";
 import prevBtn from "./prev.png";
 
+// Art images
+import art1 from "./art1.png";
+import art2 from "./art2.png";
+import art3 from "./art3.png";
+import art4 from "./art4.png";
+import art5 from "./art5.png";
+import art6 from "./art6.png";
+import art7 from "./art7.png";
+import art9 from "./art9.png";
+import art10 from "./art10.png";
+import art11 from "./art11.png";
+import art12 from "./art12.png";
+import frame from "./frame.png";
+
 export {
   logo,
   backend,
@@ -118,4 +132,16 @@ export {
   book,
   pink,
   naro,
+  art1,
+  art2,
+  art3,
+  art4,
+  art5,
+  art6,
+  art7,
+  art9,
+  art10,
+  art11,
+  art12,
+  frame,
 };
