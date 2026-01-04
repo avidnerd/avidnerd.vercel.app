@@ -123,7 +123,7 @@ const skyImages = [
   { id: 12, title: "long beach island sunrise!", description: "9/10 sunrise", image: lbi },
   { id: 13, title: "sunset at american dream mall", description: "9.2/10 sunset", image: dream },
   { id: 14, title: "rainbow <3", description: "it was so bright and beautiful!", image: rainbow },
-  { id: 15, title: "tnjsf 2025", description: "Sky from AMR", image: amr },
+  { id: 15, title: "tnjsf 2025", description: "presented my antibiotic resistance research!", image: amr },
   { id: 17, title: "new jersey academy of science", description: "presented my antibiotic research", image: njas },
   { id: 18, title: "book award ceremony!", description: "i got the uchicago book award loll", image: book },
   { id: 19, title: "train station sunrise!", description: "i've never seen clouds so bright pink 9.7/10", image: pink },

@@ -48,7 +48,7 @@ import hackathon from "./11.jpeg";
 import lbi from "./12.jpeg";
 import dream from "./13.jpeg";
 import rainbow from "./14.jpeg";
-import amr from "./15.jpeg";
+import amr from "./15.jpg";
 import njas from "./17.jpeg";
 import book from "./18.jpeg";
 import pink from "./19.jpeg";
