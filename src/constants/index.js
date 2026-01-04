@@ -13,7 +13,6 @@ import {
     docker,
     usaco,
     kessler,
-    innoverge,
     mit,
     soc,
     driver,
@@ -22,6 +21,10 @@ import {
     mdscribe,
     explore_msh,
     essex_cty,
+    csii,
+    sinai,
+    encode,
+    teens,
   } from "../assets";
   
   export const navLinks = [
@@ -122,58 +125,19 @@ import {
   
   const experiences = [
     {
-      title: "Machine Learning Research Intern",
-      company_name: "Kessler Foundation",
-      icon: kessler,
-      iconBg: "#FFF",
-      date: "October 2023 - March 2024",
-      points: [
-        "Main role in project involving use of deep learning techniques to detect drowsiness/fatigue in drivers.",
-        "Main role in project involving the detection of cancer-related fatigue to improve rehabilitation therapy for cancer patients.",
-        "Involves writing a paper and presenting to a conference.",
-        "Demonstrates skill in Python data science modules as well as understanding of electroencephelography (EEG) signals.",
-      ],
-    },
-    {
-      title: "Regional Director",
-      company_name: "Innoverge",
-      icon: innoverge,
-      iconBg: "#c900a8",
-      date: "Feb 2024 - Present",
-      points: [
-        "Organization of STEMx workshops around my community.",
-        "Teacher and volunteer at these workshops",
-        "Main mission is to promote STEM education and make a difference!",
-      ],
-    },
-    {
-      title: "Competitive Programmer",
-      company_name: "USACO/Codeforces",
-      icon: usaco,
+      title: "Scientific Researcher",
+      company_name: "Mount Sinai Health System",
+      icon: sinai,
       iconBg: "#E6DEDD",
-      date: "December 2023 - Present",
+      date: "Aug 2025 - Present",
       points: [
-        "Currently learning algorithms and data structures such as DFS, BFS, DP, prefix sums, binary search, stacks, queues, linked lists, trees, heaps, etc.",
-        "Gained experience solving technical problems and implementing algorithms under time pressure through competitions.",
-        "Currently competing in the USACO Bronze division (max I have gotten is 730 on a contest but I'm still working on it lol)",
-      ],
-    },
-    {
-      title: "Machine Learning Researcher",
-      company_name: "Massachusetts Institute of Technology",
-      icon: mit,
-      iconBg: "#E6DEDD",
-      date: "April 2024 - Present",
-      points: [
-        "For my 2024-2025 research project, I am working with the Collins Lab at MIT to use a novel ensemble ML model to design de novo drug candidates effective against Methicillin Resistant Staphylococcus Aureus.",
-        "My solution will incorporate explainability in order to understand the mechanisms of the produced drug candidates.",
-        "I am also developing an in vivo efficacy predictor to reduce the drug development timeline."
+        "Working with a mentor on full research project to use artificial intelligence to design drugs protective against Alzheimer's Disease and age-related diseases.",
       ],
     },
     {
       title: "Officer to President",
       company_name: "Computer Science Integration Initiative (CSII)",
-      icon: null,
+      icon: csii,
       iconBg: "#E6DEDD",
       date: "Aug 2024 - Present",
       points: [
@@ -187,19 +151,9 @@ import {
       ],
     },
     {
-      title: "Scientific Researcher",
-      company_name: "Mount Sinai Health System",
-      icon: null,
-      iconBg: "#E6DEDD",
-      date: "Aug 2025 - Present",
-      points: [
-        "Working with a mentor on full research project to use artificial intelligence to design drugs protective against Alzheimer's Disease and age-related diseases.",
-      ],
-    },
-    {
       title: "Chapter Lead + Member of National Council \"AI Advisory Board\"",
       company_name: "Encode Justice",
-      icon: null,
+      icon: encode,
       iconBg: "#E6DEDD",
       date: "Jun 2024 - Present",
       points: [
@@ -208,6 +162,18 @@ import {
         "Helping research and draft original policy proposals regarding specific state issues for Encode Justice's internal, youth-led AI policy think tank.",
         "Lobbying for the Policy team's proposals by meeting with legislators statewide.",
         "Developing AI ethics curriculum for our workshops at hackathons, schools, and other forums in New Jersey.",
+      ],
+    },
+    {
+      title: "Machine Learning Researcher",
+      company_name: "Massachusetts Institute of Technology",
+      icon: mit,
+      iconBg: "#E6DEDD",
+      date: "April 2024 - Present",
+      points: [
+        "For my 2024-2025 research project, I am working with the Collins Lab at MIT to use a novel ensemble ML model to design de novo drug candidates effective against Methicillin Resistant Staphylococcus Aureus.",
+        "My solution will incorporate explainability in order to understand the mechanisms of the produced drug candidates.",
+        "I am also developing an in vivo efficacy predictor to reduce the drug development timeline."
       ],
     },
     {
@@ -225,11 +191,24 @@ import {
     {
       title: "Educator",
       company_name: "Meaningful Teens",
-      icon: null,
+      icon: teens,
       iconBg: "#E6DEDD",
       date: "Jan 2024 - Present",
       points: [
         "I am a volunteer at Project Udaan, whose mission is to offer free tutoring to underprivileged students in India to help them grow and develop their reading, mathematics, and communication skills.",
+      ],
+    },
+    {
+      title: "Machine Learning Research Intern",
+      company_name: "Kessler Foundation",
+      icon: kessler,
+      iconBg: "#FFF",
+      date: "October 2023 - March 2024",
+      points: [
+        "Main role in project involving use of deep learning techniques to detect drowsiness/fatigue in drivers.",
+        "Main role in project involving the detection of cancer-related fatigue to improve rehabilitation therapy for cancer patients.",
+        "Involves writing a paper and presenting to a conference.",
+        "Demonstrates skill in Python data science modules as well as understanding of electroencephelography (EEG) signals.",
       ],
     },
     // {
@@ -450,27 +429,6 @@ import {
       source_code_link: "https://github.com/",
     },
     {
-      name: "Veridico",
-      description:
-        "Coming soon! hehehehehe ",
-      tags: [
-        {
-          name: "nlp",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "javascript",
-          color: "green-text-gradient",
-        },
-        {
-          name: "chromefordev",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: null,
-      source_code_link: "https://github.com/",
-    },
-    {
       name: "MediScribe",
       description:
         "A bunch of nerds and I made a software platform to act as a scribe for doctor-patient appointments. It listens to the visit and generates a report of the discussion, including patient symptoms, doctor diagnosis, and action needed to be taken.",
@@ -494,7 +452,7 @@ import {
     {
       name: "ECOPHM Assistant",
       description:
-        "The STEM Outreach Club is collaborating with the Essex County Office of Public Health to create an AI chatbot that can retrieve information about various healthcare services for the benefit of all Essex County residents. I am leading a team of ~10 student volunteers from the STEM Outreach Club to help in the development of the chatbot.",
+        "Leading a team of ~10 student volunteers to develop an AI chatbot for the Essex County Office of Public Health that retrieves information about healthcare services for all Essex County residents.",
       tags: [
         {
           name: "ai",
@@ -515,7 +473,7 @@ import {
     {
       name: "Doctrino",
       description:
-        "I'm happy to announce that I recently created Doctrino, a project I'm working on to record medical visits, extract insights and action items from them and help patients stay on top of their health. Right now, Doctrino records a visit, produces a structured summary (diagnosis, advice, symptoms), and our on-device agent pulls out medications, doses, labs, imaging, and other recommended follow-up tasks. It turns those into tasks with reminders that are synced with Apple's calendar, along with the option of sending reminders to complete tasks through Doctrino's notification system. This is the first version of Doctrino which I'm working on expanding to support a full on-device health agent to help people manage their health appropriately.",
+        "An on-device health agent that records medical visits, extracts structured summaries (diagnosis, advice, symptoms), and automatically creates calendar reminders for medications, labs, imaging, and follow-up tasks synced with Apple's calendar.",
       tags: [
         {
           name: "healthcare",

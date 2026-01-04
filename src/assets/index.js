@@ -24,8 +24,11 @@ import threejs from "./tech/threejs.svg";
 import usaco from "./company/usaco.png";
 import soc from "./company/soc.png";
 import kessler from "./company/kessler.png";
-import innoverge from "./company/innoverge.png";
-import mit from "./company/mit.png"
+import mit from "./company/mit.png";
+import csii from "./csii.jpg";
+import sinai from "./sinai.jpg";
+import encode from "./encode.jpeg";
+import teens from "./teens.jpeg";
 
 import pd from "./plant_doctor.png";
 import mdscribe from './mediscribe.png'
@@ -102,8 +105,11 @@ export {
   usaco,
   soc,
   kessler,
-  innoverge,
   mit,
+  csii,
+  sinai,
+  encode,
+  teens,
   pd,
   mdscribe,
   explore_msh,
