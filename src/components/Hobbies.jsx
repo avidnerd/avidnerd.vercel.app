@@ -345,9 +345,9 @@ const ArtGallery = () => {
             className="absolute inset-0 w-full h-full object-contain z-0"
           />
           {/* Art image - overlay on top of frame, positioned to fit inside frame opening */}
-          {currentArt.image && (
+          {currentArt && (
             <motion.div
-              key={currentIndex}
+              key={`art-${currentIndex}-${currentArt.id}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -356,21 +356,27 @@ const ArtGallery = () => {
                 inset: currentArt.inset || "12%",
               }}
             >
-              <img
-                src={currentArt.image}
-                alt={`Art ${currentArt.id}`}
-                className="object-contain"
-                style={{
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  width: 'auto',
-                  height: 'auto',
-                  transform: `scale(${currentArt.scale || 1})`,
-                }}
-                onError={(e) => {
-                  console.error(`Failed to load art ${currentArt.id}:`, e);
-                }}
-              />
+              {currentArt.image ? (
+                <img
+                  src={currentArt.image}
+                  alt={`Art ${currentArt.id}`}
+                  className="object-contain"
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    width: 'auto',
+                    height: 'auto',
+                    transform: `scale(${currentArt.scale || 1})`,
+                  }}
+                  onError={(e) => {
+                    console.error(`Failed to load art ${currentArt.id}`);
+                    console.error('Image value:', currentArt.image);
+                    console.error('Image type:', typeof currentArt.image);
+                  }}
+                />
+              ) : (
+                <p className="text-secondary text-sm">Image not found</p>
+              )}
             </motion.div>
           )}
         </div>
