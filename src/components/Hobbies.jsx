@@ -333,18 +333,15 @@ const ArtGallery = () => {
     <div>
       <h3 className="text-white text-[24px] font-bold mb-5">Art Gallery</h3>
       <p className="text-secondary text-[17px] mb-8">
-        Click on the artwork to see the next piece
+        some art i've made over the years. click on the artwork to see the next piece!
       </p>
       <div className="relative max-w-4xl mx-auto -mt-9" style={{ transform: 'scale(1.2)' }}>
-        {/* Single frame container */}
         <div className="relative w-full aspect-square cursor-pointer" onClick={nextArt}>
-          {/* Frame - base layer */}
           <img
             src={frame}
             alt="Frame"
             className="absolute inset-0 w-full h-full object-contain z-0"
           />
-          {/* Art image - overlay on top of frame, positioned to fit inside frame opening */}
           {currentArt && currentArt.image && (
             <motion.div
               key={`art-${currentIndex}-${currentArt.id}`}
@@ -382,7 +379,6 @@ const ArtGallery = () => {
           )}
         </div>
 
-        {/* Navigation controls */}
         <div className="flex items-center justify-center gap-6 mt-6">
           <button
             onClick={prevArt}
@@ -399,7 +395,6 @@ const ArtGallery = () => {
             </svg>
           </button>
 
-          {/* Art indicators */}
           <div className="flex gap-2">
             {artImages.map((_, index) => (
               <button

@@ -37,8 +37,8 @@ import {
       title: "Projects",
     },
     {
-      id: "blog",
-      title: "Blogs",
+      id: "awards",
+      title: "Awards",
     },
     {
       id: "hobbies",
@@ -220,13 +220,96 @@ import {
     },
   ];
   
-  const blogs = [
+  const awards = [
     {
-      name: "HackMHS IX",
-      description:
-        "I recently participated in our school hackathon with a bunch of my friends. It was quite the experience (we stayed up until 4 am because we had this really annoying bug. Our project was MediScribe, which is a way to streamline doctor-patient visits by having our product recod each visit and summarize the patient symptoms, doctor advice, and action that needed to be taken for both doctor and patient. We came across a lot of challenges (literally took 6 hours to come up with an idea), but overall I'm happy with our project (we ended up placing in the top three within our category), and it could definitely expand into a real product! I am so ready for our next hackathon (so hyped for PennApps!!)",
-      image: pd,
-      source_code_link: "https://github.com/",
+      title: "National Merit Semifinalist",
+      issuer: "College Board",
+      date: "Sep 2025",
+      description: "Received a perfect score on the PSAT, earning an opportunity to advance in the competition for a National Merit Scholarship",
+    },
+    {
+      title: "National Recognition Program",
+      issuer: "College Board",
+      date: "Aug 2025",
+      description: "Recognized for outstanding academic achievement",
+    },
+    {
+      title: "AP Scholar with Distinction",
+      issuer: "College Board",
+      date: "Jul 2025",
+      description: "For achieving an average score of at least 3.5 on all AP Exams taken, and scores of 3 or higher on five or more exams.",
+    },
+    {
+      title: "University of Chicago Book Award",
+      issuer: "The University of Chicago",
+      date: "Jun 2025",
+      description: "Given to a student in the top of their class in recognition of outstanding academic achievement, community engagement, and an intellectual curiosity to draw connections across disciplines.",
+    },
+    {
+      title: "Blue Ocean Entrepreneurship Competition Top 10",
+      issuer: "Blue Ocean",
+      date: "Apr 2025",
+      description: "Pitch for biologic stabilization placed in top 10 pitches internationally (<0.001% of applicants)",
+    },
+    {
+      title: "Toshiba Exploravision Honorable Mention 2025",
+      issuer: "Toshiba",
+      date: "Apr 2025",
+      description: "For achieving the top 10% of all projects submitted (2000+ projects total).",
+    },
+    {
+      title: "Blue Ocean Entrepreneurship Competition Top 100 (2x)",
+      issuer: "Blue Ocean",
+      date: "Mar 2025",
+      description: "Placed in top 100 twice in international entrepreneurship competition",
+    },
+    {
+      title: "Terra North Jersey Science Fair 2025",
+      issuer: "Terra",
+      date: "Mar 2025",
+      description: "Presented original bioinformatics research on designing de novo antibiotics using generative artificial intelligence models. Bioinformatics and Computational Biology - 2nd Place Award ($75) Association for Computing and Machinery Award",
+    },
+    {
+      title: "Penn EcoVenture Challenge 2024",
+      issuer: "UPenn",
+      date: "Jul 2024",
+      description: "2nd place winner of a climate tech startup competition hosted by UPenn. Our project was a blockchain based green certification platform with a consumer extension to detect greenwashing.",
+    },
+    {
+      title: "Top 10% in New Jersey Biology II",
+      issuer: "New Jersey Science League",
+      date: "Jun 2024",
+      description: "Our team received first in NJ and individually, I got top 10% in the state (out of 150+ students) in Advanced Biology. In order to be selected for the team, I was top 6 in terms of grades for AP Biology.",
+    },
+    {
+      title: "ACSL National Finals Qualifier",
+      issuer: "American Computer Science League",
+      date: "Jun 2023",
+      description: "Qualified for national finals scoring 36/40 through all 4 competitions, and was the leading scorer of my team.",
+    },
+    {
+      title: "hackMHS VIII Award",
+      issuer: "Millburn High School",
+      date: "May 2023",
+      description: "We created a convolutional neural network for detecting and classifying crop disease, and won 2nd place in the Sustainability category.",
+    },
+    {
+      title: "First Place in New Jersey Region Band for Oboe",
+      issuer: "North Jersey School Music Association",
+      date: "Feb 2023",
+      description: "Achieved first place in regional band competition for oboe performance",
+    },
+    {
+      title: "Terra North Jersey Science Fair 2024",
+      issuer: "Terra North Jersey Science Fair",
+      date: "2024",
+      description: "Project: A Novel Method of Detecting Fatigue Induced by Driving from EEG Data • Yale Science and Engineering Award for the Best Overall Exhibit in Science, Technology, Engineering, and Mathematics. • Helmer Volunteer Award for True Potential for creating a project that has potential for a positive impact on the real world.",
+    },
+    {
+      title: "Toshiba Exploravision Honorable Mention 2024",
+      issuer: "Toshiba",
+      date: "2024",
+      description: "For achieving the top 10% of all projects submitted (2000+ projects total). Our project was a proposal and design for biohybrid nanorobots to combat rheumatoid arthritis.",
     },
   ];
 
@@ -359,4 +442,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, blogs, projects };
+  export { services, technologies, experiences, testimonials, blogs, projects, awards };
