@@ -243,7 +243,7 @@ import {
       title: "University of Chicago Book Award",
       issuer: "The University of Chicago",
       date: "Jun 2025",
-      description: "Given to a student in the top of their class in recognition of outstanding academic achievement, community engagement, and an intellectual curiosity to draw connections across disciplines.",
+      description: "Given to a student in recognition of outstanding academic achievement, community engagement, and an intellectual curiosity to draw connections across disciplines.",
     },
     {
       title: "Blue Ocean Entrepreneurship Competition Top 10",
@@ -258,7 +258,7 @@ import {
       description: "For achieving the top 10% of all projects submitted (2000+ projects total).",
     },
     {
-      title: "Blue Ocean Entrepreneurship Competition Top 100 (2x)",
+      title: "Blue Ocean Entrepreneurship Competition Top 100",
       issuer: "Blue Ocean",
       date: "Mar 2025",
       description: "Placed in top 100 twice in international entrepreneurship competition",
@@ -267,19 +267,19 @@ import {
       title: "Terra North Jersey Science Fair 2025",
       issuer: "Terra",
       date: "Mar 2025",
-      description: "Presented original bioinformatics research on designing de novo antibiotics using generative artificial intelligence models. Bioinformatics and Computational Biology - 2nd Place Award ($75) Association for Computing and Machinery Award",
+      description: "Presented original bioinformatics research on computationally designing de novo antibiotics. Bioinformatics - 2nd Place Award ($75), Association for Computing and Machinery Award",
     },
     {
       title: "Penn EcoVenture Challenge 2024",
       issuer: "UPenn",
       date: "Jul 2024",
-      description: "2nd place winner of a climate tech startup competition hosted by UPenn. Our project was a blockchain based green certification platform with a consumer extension to detect greenwashing.",
+      description: "2nd place winner of a climate tech startup competition hosted by UPenn. Our project was a blockchain based green certification platform to detect greenwashing.",
     },
     {
       title: "Top 10% in New Jersey Biology II",
       issuer: "New Jersey Science League",
       date: "Jun 2024",
-      description: "Our team received first in NJ and individually, I got top 10% in the state (out of 150+ students) in Advanced Biology. In order to be selected for the team, I was top 6 in terms of grades for AP Biology.",
+      description: "Our team received first in NJ and individually, I got top 10% in the state (out of 150+ students) in Advanced Biology. Selection criteria: Top 6 students in AP Biology.",
     },
     {
       title: "ACSL National Finals Qualifier",
@@ -294,7 +294,7 @@ import {
       description: "We created a convolutional neural network for detecting and classifying crop disease, and won 2nd place in the Sustainability category.",
     },
     {
-      title: "First Place in New Jersey Region Band for Oboe",
+      title: "First Place in New Jersey Region Band (Oboe)",
       issuer: "North Jersey School Music Association",
       date: "Feb 2023",
       description: "Achieved first place in regional band competition for oboe performance",
@@ -303,13 +303,13 @@ import {
       title: "Terra North Jersey Science Fair 2024",
       issuer: "Terra North Jersey Science Fair",
       date: "2024",
-      description: "Project: A Novel Method of Detecting Fatigue Induced by Driving from EEG Data • Yale Science and Engineering Award for the Best Overall Exhibit in Science, Technology, Engineering, and Mathematics. • Helmer Volunteer Award for True Potential for creating a project that has potential for a positive impact on the real world.",
+      description: "Project: A Novel Method of Detecting Fatigue Induced by Driving from EEG Data Yale Science and Engineering Award, Helmer Volunteer Award for True Potential (real world impact)",
     },
     {
       title: "Toshiba Exploravision Honorable Mention 2024",
       issuer: "Toshiba",
       date: "2024",
-      description: "For achieving the top 10% of all projects submitted (2000+ projects total). Our project was a proposal and design for biohybrid nanorobots to combat rheumatoid arthritis.",
+      description: "Top 10% of all projects submitted (2000+ projects total). Proposal and design for biohybrid nanorobots to combat rheumatoid arthritis.",
     },
   ];
 
