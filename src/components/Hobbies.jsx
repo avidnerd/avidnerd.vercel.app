@@ -227,7 +227,7 @@ const OboeSection = () => {
 
           <button
             onClick={nextVideo}
-            className="absolute bottom-[4%] right-[5%] w-[180px] h-[180px] hover:scale-110 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[5%] right-[5%] w-[170px] h-[170px] hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Next video"
           >
             <img src={nextBtn} alt="Next" className="w-full h-full object-contain" />
