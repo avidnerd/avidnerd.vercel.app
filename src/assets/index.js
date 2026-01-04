@@ -36,6 +36,13 @@ import explore_msh from "./explore_millburn.png";
 // Sky pictures
 import sky1 from "./1.jpeg";
 
+// Player images
+import player from "./player.png";
+import playBtn from "./play.png";
+import pauseBtn from "./pause.png";
+import nextBtn from "./next.png";
+import prevBtn from "./prev.png";
+
 export {
   logo,
   backend,
@@ -69,4 +76,9 @@ export {
   driver,
   tripguide,
   sky1,
+  player,
+  playBtn,
+  pauseBtn,
+  nextBtn,
+  prevBtn,
 };

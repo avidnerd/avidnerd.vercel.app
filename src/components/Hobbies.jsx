@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import { sky1 } from "../assets";
+import { sky1, player, playBtn, pauseBtn, nextBtn, prevBtn } from "../assets";
 
 const oboeVideos = [
   { 
@@ -76,6 +76,7 @@ const skyImages = [
 
 const OboeSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const getYouTubeThumbnail = (url) => {
     let videoId = null;
@@ -95,6 +96,14 @@ const OboeSection = () => {
     setCurrentIndex((prev) => (prev - 1 + oboeVideos.length) % oboeVideos.length);
   };
 
+  const togglePlayPause = () => {
+    setIsPlaying(!isPlaying);
+    // If playing, open the YouTube video
+    if (!isPlaying) {
+      window.open(oboeVideos[currentIndex].youtubeUrl, "_blank");
+    }
+  };
+
   const currentVideo = oboeVideos[currentIndex];
   const thumbnail = getYouTubeThumbnail(currentVideo.youtubeUrl);
 
@@ -102,38 +111,50 @@ const OboeSection = () => {
     <div className="mt-10">
       <h3 className="text-white text-[24px] font-bold mb-5">Oboe</h3>
       <div className="relative max-w-2xl mx-auto">
-        {/* Walkman-style container */}
-        <div className="bg-tertiary rounded-3xl p-8 shadow-card border-2 border-secondary border-opacity-20">
-          {/* Video display area */}
-          <div className="relative w-full h-[300px] mb-6 rounded-xl overflow-hidden bg-black">
+        {/* Player container - relative positioning for absolute children */}
+        <div className="relative w-full">
+          {/* Base player image */}
+          <img
+            src={player}
+            alt="Music Player"
+            className="w-full h-auto"
+          />
+
+          {/* YouTube thumbnail overlay - positioned on the screen area */}
+          {/* Adjust these percentages based on where the screen is on your player image */}
+          <div 
+            className="absolute top-[15%] left-[10%] right-[10%] bottom-[45%] overflow-hidden cursor-pointer group"
+            onClick={() => window.open(currentVideo.youtubeUrl, "_blank")}
+            style={{
+              // Adjust these values to match your player screen position
+              // top, left, right, bottom are approximate - adjust as needed
+            }}
+          >
             {thumbnail ? (
               <img
                 src={thumbnail}
                 alt={currentVideo.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-[#0d1140] to-[#1a1f5e] flex items-center justify-center">
                 <div className="text-center">
                   <svg
-                    className="w-20 h-20 mx-auto mb-3 text-secondary"
+                    className="w-12 h-12 mx-auto mb-2 text-secondary"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
                   </svg>
-                  <p className="text-secondary text-sm">YouTube Video</p>
+                  <p className="text-secondary text-xs">YouTube Video</p>
                 </div>
               </div>
             )}
-            {/* Play button overlay */}
-            <div 
-              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 hover:bg-opacity-40 transition-all cursor-pointer"
-              onClick={() => window.open(currentVideo.youtubeUrl, "_blank")}
-            >
-              <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity shadow-lg">
+            {/* Play overlay on hover */}
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                 <svg
-                  className="w-10 h-10 text-white ml-1"
+                  className="w-8 h-8 text-white ml-1"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -143,60 +164,52 @@ const OboeSection = () => {
             </div>
           </div>
 
-          {/* Video info */}
-          <div className="text-center mb-6">
-            <h3 className="text-white font-bold text-[24px] mb-2">{currentVideo.title}</h3>
-            <p className="text-secondary text-[16px]">{currentVideo.description}</p>
+          {/* Video info overlay - adjust position as needed */}
+          <div 
+            className="absolute bottom-[35%] left-[10%] right-[10%] text-center"
+            style={{
+              // Adjust bottom percentage to position above buttons
+            }}
+          >
+            <h3 className="text-white font-bold text-[18px] mb-1 truncate">{currentVideo.title}</h3>
+            <p className="text-secondary text-[12px] truncate">{currentVideo.description}</p>
           </div>
 
-          {/* Navigation controls - Walkman style */}
-          <div className="flex items-center justify-center gap-6">
-            <button
-              onClick={prevVideo}
-              className="w-12 h-12 rounded-full bg-black-100 hover:bg-opacity-80 flex items-center justify-center transition-all group"
-              aria-label="Previous video"
-            >
-              <svg
-                className="w-6 h-6 text-white group-hover:scale-110 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
+          {/* Control buttons - positioned absolutely on the player */}
+          {/* Previous button */}
+          <button
+            onClick={prevVideo}
+            className="absolute bottom-[15%] left-[20%] w-12 h-12 hover:scale-110 transition-transform cursor-pointer z-10"
+            aria-label="Previous video"
+            style={{
+              // Adjust these percentages to match button positions on your player
+              // You may need to fine-tune based on your player.png design
+            }}
+          >
+            <img src={prevBtn} alt="Previous" className="w-full h-full object-contain" />
+          </button>
 
-            {/* Video indicators */}
-            <div className="flex gap-2">
-              {oboeVideos.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    index === currentIndex 
-                      ? "w-8 bg-white" 
-                      : "w-2 bg-secondary bg-opacity-50 hover:bg-opacity-75"
-                  }`}
-                  aria-label={`Go to video ${index + 1}`}
-                />
-              ))}
-            </div>
+          {/* Play/Pause button */}
+          <button
+            onClick={togglePlayPause}
+            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-14 h-14 hover:scale-110 transition-transform cursor-pointer z-10"
+            aria-label={isPlaying ? "Pause" : "Play"}
+          >
+            <img 
+              src={isPlaying ? pauseBtn : playBtn} 
+              alt={isPlaying ? "Pause" : "Play"} 
+              className="w-full h-full object-contain" 
+            />
+          </button>
 
-            <button
-              onClick={nextVideo}
-              className="w-12 h-12 rounded-full bg-black-100 hover:bg-opacity-80 flex items-center justify-center transition-all group"
-              aria-label="Next video"
-            >
-              <svg
-                className="w-6 h-6 text-white group-hover:scale-110 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
+          {/* Next button */}
+          <button
+            onClick={nextVideo}
+            className="absolute bottom-[15%] right-[20%] w-12 h-12 hover:scale-110 transition-transform cursor-pointer z-10"
+            aria-label="Next video"
+          >
+            <img src={nextBtn} alt="Next" className="w-full h-full object-contain" />
+          </button>
         </div>
       </div>
     </div>
@@ -426,7 +439,6 @@ const Hobbies = () => {
         </motion.p>
       </div>
 
-      {/* Oboe Videos and Sky Gallery - Side by Side */}
       <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <OboeSection />
         <SkyGallery />
