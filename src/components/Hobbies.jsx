@@ -345,7 +345,7 @@ const ArtGallery = () => {
             className="absolute inset-0 w-full h-full object-contain z-0"
           />
           {/* Art image - overlay on top of frame, positioned to fit inside frame opening */}
-          {currentArt && (
+          {currentArt && currentArt.image && (
             <motion.div
               key={`art-${currentIndex}-${currentArt.id}`}
               initial={{ opacity: 0 }}
@@ -356,27 +356,28 @@ const ArtGallery = () => {
                 inset: currentArt.inset || "12%",
               }}
             >
-              {currentArt.image ? (
-                <img
-                  src={currentArt.image}
-                  alt={`Art ${currentArt.id}`}
-                  className="object-contain"
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    transform: `scale(${currentArt.scale || 1})`,
-                  }}
-                  onError={(e) => {
-                    console.error(`Failed to load art ${currentArt.id}`);
-                    console.error('Image value:', currentArt.image);
-                    console.error('Image type:', typeof currentArt.image);
-                  }}
-                />
-              ) : (
-                <p className="text-secondary text-sm">Image not found</p>
-              )}
+              <img
+                src={currentArt.image}
+                alt={`Art ${currentArt.id}`}
+                className="object-contain"
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  width: 'auto',
+                  height: 'auto',
+                  transform: `scale(${currentArt.scale || 1})`,
+                }}
+                loading="eager"
+                onError={(e) => {
+                  console.error(`Failed to load art ${currentArt.id}`);
+                  console.error('Image path:', currentArt.image);
+                  // Try to reload the image
+                  const img = e.target;
+                  if (img.src) {
+                    img.src = img.src + '?retry=' + Date.now();
+                  }
+                }}
+              />
             </motion.div>
           )}
         </div>
