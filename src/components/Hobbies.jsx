@@ -204,28 +204,18 @@ const OboeSection = () => {
             <h3 className="text-black font-bold text-[31px] mb-1 truncate">{currentVideo.title}</h3>
             <p className="text-black text-[12px] truncate">{currentVideo.description}</p>
           </div>
-
-          {/* Control buttons - positioned absolutely on the player */}
-          {/* 
-            TO ADJUST BUTTON SIZES: Change w-12 h-12 (width/height classes)
-            Example: w-16 h-16 for larger buttons, w-10 h-10 for smaller
-            TO ADJUST BUTTON POSITIONS: Change bottom, left, right percentages
-            Example: bottom-[12%] left-[18%] for different positions
-          */}
           
-          {/* Previous button */}
           <button
             onClick={prevVideo}
-            className="absolute bottom-[15%] left-[20%] w-20 h-20 hover:scale-110 transition-transform cursor-pointer z-10"
+            className="scale-200 absolute bottom-[15%] left-[20%] w-20 h-20 hover:scale-220 transition-transform cursor-pointer z-10"
             aria-label="Previous video"
           >
             <img src={prevBtn} alt="Previous" className="w-full h-full object-contain" />
           </button>
 
-          {/* Play/Pause button */}
           <button
             onClick={togglePlayPause}
-            className="scale-150 absolute bottom-[15%] left-1/2 -translate-x-1/2 w-24 h-24 hover:scale-160 transition-transform cursor-pointer z-10"
+            className="scale-200 absolute bottom-[15%] left-1/2 -translate-x-1/2 w-24 h-24 hover:scale-220 transition-transform cursor-pointer z-10"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             <img 
@@ -235,10 +225,9 @@ const OboeSection = () => {
             />
           </button>
 
-          {/* Next button */}
           <button
             onClick={nextVideo}
-            className="absolute bottom-[15%] right-[20%] w-20 h-20 hover:scale-110 transition-transform cursor-pointer z-10"
+            className="scale-200 absolute bottom-[15%] right-[20%] w-20 h-20 hover:scale-220 transition-transform cursor-pointer z-10"
             aria-label="Next video"
           >
             <img src={nextBtn} alt="Next" className="w-full h-full object-contain" />
