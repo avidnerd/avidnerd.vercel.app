@@ -35,6 +35,25 @@ import explore_msh from "./explore_millburn.png";
 
 // Sky pictures
 import sky1 from "./1.jpeg";
+import cmu from "./2.jpeg";
+import haleakala from "./3.jpeg";
+import hookipa from "./4.jpeg";
+import kilauea from "./5.jpeg";
+import iki from "./6.jpeg";
+import chennai from "./7.jpeg";
+import driving from "./8.jpeg";
+import south from "./9.jpeg";
+import tatte from "./10.jpeg";
+import hackathon from "./11.jpeg";
+import lbi from "./12.jpeg";
+import dream from "./13.jpeg";
+import rainbow from "./14.jpeg";
+import amr from "./15.jpeg";
+import njas from "./17.jpeg";
+import book from "./18.jpeg";
+import pink from "./19.jpeg";
+import naro from "./21.jpeg";
+
 
 // Player images
 import player from "./player.png";
@@ -81,4 +100,22 @@ export {
   pauseBtn,
   nextBtn,
   prevBtn,
+  cmu,
+  haleakala,
+  hookipa,
+  kilauea,
+  iki,
+  chennai,
+  driving,
+  south,
+  tatte,
+  hackathon,
+  lbi,
+  dream,
+  rainbow,
+  amr,
+  njas,
+  book,
+  pink,
+  naro,
 };

@@ -5,7 +5,32 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import { sky1, player, playBtn, pauseBtn, nextBtn, prevBtn } from "../assets";
+import { 
+  sky1, 
+  player, 
+  playBtn, 
+  pauseBtn, 
+  nextBtn, 
+  prevBtn, 
+  cmu, 
+  haleakala, 
+  hookipa, 
+  kilauea, 
+  iki, 
+  chennai, 
+  driving, 
+  south, 
+  tatte, 
+  hackathon, 
+  lbi, 
+  dream, 
+  rainbow, 
+  amr, 
+  njas, 
+  book, 
+  pink, 
+  naro 
+} from "../assets";
 
 const oboeVideos = [
   { 
@@ -32,6 +57,19 @@ const oboeVideos = [
     description: "Ravyn Lenae",
     youtubeUrl: "https://youtube.com/shorts/smg-XFrX0ZE?si=j8mbf9rDy1Kmtytt"
   },
+
+  { 
+    id: 5, 
+    title: "Snow White", 
+    description: "Laufey",
+    youtubeUrl: "  https://youtube.com/shorts/MuZtf_dwIxw?si=P_5ZUuFWIcaq8TVf"
+  },
+  {
+    id: 6,
+    title: "Good Looking",
+    description: "Suki Waterhouse",
+    youtubeUrl: "https://youtube.com/shorts/H1p1jH54-8s?si=jGjU1d3KIYIsfddM"
+  }
 ];
 
 const memoryStats = [
@@ -72,13 +110,30 @@ const memoryStats = [
 
 const skyImages = [
   { id: 1, title: "hike in ithaca!", description: "8/10 hike", image: sky1 },
+  { id: 2, title: "walking to the sky!", description: "from cmu visit", image: cmu },
+  { id: 3, title: "haleakala sunset <3", description: "best sunset i've ever seen 11/10", image: haleakala },
+  { id: 4, title: "turtles at ho'okipa beach!", description: "they were chill", image: hookipa },
+  { id: 5, title: "kilauea crater lake :o", description: "on kilauea iki trail, 7 mile hike 11/10", image: kilauea },
+  { id: 6, title: "me and my brother on the lake!", description: "", image: iki },
+  { id: 7, title: "road trip!", description: "from bangalore to chennai with cousins", image: chennai },
+  { id: 8, title: "tnjsf 2024", description: "project on detecting drowsiness while driving!", image: driving },
+  { id: 9, title: "south mountain", description: "classic, beautiful place 8/10 hike", image: south },
+  { id: 10, title: "tatte bakery", description: "realy good bakery in boston", image: tatte },
+  { id: 11, title: "hackmhs ix", description: "presenting our project to judges!", image: hackathon },
+  { id: 12, title: "long beach island sunrise!", description: "9/10 sunrise", image: lbi },
+  { id: 13, title: "sunset at american dream mall", description: "9.2/10 sunset", image: dream },
+  { id: 14, title: "rainbow <3", description: "it was so bright and beautiful!", image: rainbow },
+  { id: 15, title: "tnjsf 2025", description: "Sky from AMR", image: amr },
+  { id: 17, title: "new jersey academy of science", description: "presented my antibiotic research", image: njas },
+  { id: 18, title: "book award ceremony!", description: "i got the uchicago book award loll", image: book },
+  { id: 19, title: "train station sunrise!", description: "i've never seen clouds so bright pink 9.7/10", image: pink },
+  { id: 21, title: "third course at naro!", description: "korean fine dining, probably the best meal i've had in my life", image: naro },
 ];
 
 const OboeSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Extract YouTube video ID for embedding
   const getYouTubeVideoId = (url) => {
     let videoId = null;
     if (url.includes('youtube.com/shorts/')) {
@@ -96,12 +151,12 @@ const OboeSection = () => {
 
   const nextVideo = () => {
     setCurrentIndex((prev) => (prev + 1) % oboeVideos.length);
-    setIsPlaying(false); // Stop playing when switching videos
+    setIsPlaying(false); 
   };
 
   const prevVideo = () => {
     setCurrentIndex((prev) => (prev - 1 + oboeVideos.length) % oboeVideos.length);
-    setIsPlaying(false); // Stop playing when switching videos
+    setIsPlaying(false); 
   };
 
   const togglePlayPause = () => {
@@ -112,33 +167,26 @@ const OboeSection = () => {
   const videoId = getYouTubeVideoId(currentVideo.youtubeUrl);
   const thumbnail = getYouTubeThumbnail(currentVideo.youtubeUrl);
   
-  // Scale factor - increase this number to make everything bigger (e.g., 1.2 = 20% larger)
-  const scale = 0.7; // Adjust this value to scale the entire player
+  const scale = 0.7;
 
   return (
     <div className="mt-10">
       <h3 className="text-white text-[24px] font-bold mb-5">Oboe</h3>
+      <p className="text-secondary text-[17px] mb-8">
+        Oboe covers I've made in my free time!
+      </p>
       <div className="relative max-w-2xl" style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}>
-        {/* Player container - relative positioning for absolute children */}
         <div className="relative w-full">
-          {/* Base player image */}
           <img
             src={player}
             alt="Music Player"
             className="w-full h-auto"
           />
 
-          {/* YouTube video/thumbnail overlay - positioned on the screen area */}
-          {/* 
-            TO ADJUST POSITION: Change the percentages below (top, left, right, bottom)
-            TO ADJUST SIZE: Change the percentages or use specific pixel values
-            Example: top-[12%] left-[8%] right-[8%] bottom-[48%]
-          */}
           <div 
             className="absolute top-[6%] left-[6%] right-[6%] bottom-[47%] overflow-hidden"
             style={{
-              // You can also use specific pixel values here if percentages don't work well
-              // top: '60px', left: '40px', right: '40px', bottom: '200px'
+
             }}
           >
             {isPlaying && videoId ? (
@@ -177,7 +225,6 @@ const OboeSection = () => {
                     </div>
                   </div>
                 )}
-                {/* Play overlay on hover */}
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
                   <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                     <svg
@@ -193,11 +240,7 @@ const OboeSection = () => {
             )}
           </div>
 
-          {/* Video info overlay - adjust position as needed */}
-          {/* 
-            TO ADJUST: Change bottom percentage or use specific pixel value
-            Example: bottom: '180px' or bottom-[35%]
-          */}
+
           <div 
             className="absolute bottom-[29%] left-[10%] right-[10%] text-center"
           >
@@ -319,9 +362,9 @@ const SkyGallery = () => {
 
   return (
     <div className="mt-10">
-      <h3 className="text-white text-[24px] font-bold mb-5">Sky Gallery</h3>
+      <h3 className="text-white text-[24px] font-bold mb-5">Adventures!</h3>
       <p className="text-secondary text-[17px] mb-8">
-        A collection of sky pictures from my walks
+        Pictures from cool stuff I've done and places I've been!
       </p>
       <div className="relative max-w-2xl mx-auto">
         {/* Carousel container */}
@@ -374,7 +417,6 @@ const SkyGallery = () => {
               </svg>
             </button>
 
-            {/* Image indicators */}
             <div className="flex gap-2">
               {skyImages.map((_, index) => (
                 <button
@@ -408,7 +450,6 @@ const SkyGallery = () => {
         </div>
       </div>
 
-      {/* Modal for selected image */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
@@ -469,7 +510,6 @@ const Hobbies = () => {
         <SkyGallery />
       </div>
 
-      {/* Memory Athletics */}
       <div className="mt-20">
         <h3 className="text-white text-[24px] font-bold mb-5">Memory Athletics</h3>
         <p className="text-secondary text-[17px] mb-8">
