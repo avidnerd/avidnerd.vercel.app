@@ -85,17 +85,17 @@ const oboeVideos = [
 ];
 
 const artImages = [
-  { id: 1, image: art1 },
-  { id: 2, image: art2 },
-  { id: 3, image: art3 },
-  { id: 4, image: art4 },
-  { id: 5, image: art5 },
-  { id: 6, image: art6 },
-  { id: 7, image: art7 },
-  { id: 9, image: art9 },
-  { id: 10, image: art10 },
-  { id: 11, image: art11 },
-  { id: 12, image: art12 },
+  { id: 1, image: art1, scale: 0.9, inset: "12%" }, // Custom scale and inset for each artwork
+  { id: 2, image: art2, scale: 0.85, inset: "12%" },
+  { id: 3, image: art3, scale: 0.9, inset: "12%" },
+  { id: 4, image: art4, scale: 0.88, inset: "12%" },
+  { id: 5, image: art5, scale: 0.9, inset: "12%" },
+  { id: 6, image: art6, scale: 0.85, inset: "12%" },
+  { id: 7, image: art7, scale: 0.9, inset: "12%" },
+  { id: 9, image: art9, scale: 0.88, inset: "12%" },
+  { id: 10, image: art10, scale: 0.9, inset: "12%" },
+  { id: 11, image: art11, scale: 0.85, inset: "12%" },
+  { id: 12, image: art12, scale: 0.9, inset: "12%" },
 ];
 
 
@@ -345,29 +345,34 @@ const ArtGallery = () => {
             className="absolute inset-0 w-full h-full object-contain z-0"
           />
           {/* Art image - overlay on top of frame, positioned to fit inside frame opening */}
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="absolute inset-[10%] flex items-center justify-center z-10"
-            style={{
-              // Adjust these percentages to match your frame's inner opening
-              // Increase the percentage for more border, decrease for less
-            }}
-          >
-            <img
-              src={currentArt.image}
-              alt={`Art ${currentArt.id}`}
-              className="w-full h-full object-contain"
+          {currentArt.image && (
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="absolute flex items-center justify-center z-10"
               style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-                width: 'auto',
-                height: 'auto',
+                inset: currentArt.inset || "12%",
               }}
-            />
-          </motion.div>
+            >
+              <img
+                src={currentArt.image}
+                alt={`Art ${currentArt.id}`}
+                className="object-contain"
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  width: 'auto',
+                  height: 'auto',
+                  transform: `scale(${currentArt.scale || 1})`,
+                }}
+                onError={(e) => {
+                  console.error(`Failed to load art ${currentArt.id}:`, e);
+                }}
+              />
+            </motion.div>
+          )}
         </div>
 
         {/* Navigation controls */}
