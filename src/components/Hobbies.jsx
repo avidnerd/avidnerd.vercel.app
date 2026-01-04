@@ -207,7 +207,7 @@ const OboeSection = () => {
           
           <button
             onClick={prevVideo}
-            className="absolute bottom-[4%] left-[5%] w-[200px] h-[200px] hover:scale-110 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[6%] left-[5%] w-[200px] h-[200px] hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Previous video"
           >
             <img src={prevBtn} alt="Previous" className="w-full h-full object-contain" />
@@ -227,7 +227,7 @@ const OboeSection = () => {
 
           <button
             onClick={nextVideo}
-            className="absolute bottom-[5%] right-[5%] w-[170px] h-[170px] hover:scale-110 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[8%] right-[5%] w-[170px] h-[170px] hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Next video"
           >
             <img src={nextBtn} alt="Next" className="w-full h-full object-contain" />
