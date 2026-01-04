@@ -78,39 +78,47 @@ const OboeSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const getYouTubeThumbnail = (url) => {
+  // Extract YouTube video ID for embedding
+  const getYouTubeVideoId = (url) => {
     let videoId = null;
     if (url.includes('youtube.com/shorts/')) {
       videoId = url.split('youtube.com/shorts/')[1]?.split('?')[0];
     } else if (url.includes('v=')) {
       videoId = url.split('v=')[1]?.split('&')[0];
     }
+    return videoId;
+  };
+
+  const getYouTubeThumbnail = (url) => {
+    const videoId = getYouTubeVideoId(url);
     return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : null;
   };
 
   const nextVideo = () => {
     setCurrentIndex((prev) => (prev + 1) % oboeVideos.length);
+    setIsPlaying(false); // Stop playing when switching videos
   };
 
   const prevVideo = () => {
     setCurrentIndex((prev) => (prev - 1 + oboeVideos.length) % oboeVideos.length);
+    setIsPlaying(false); // Stop playing when switching videos
   };
 
   const togglePlayPause = () => {
     setIsPlaying(!isPlaying);
-    // If playing, open the YouTube video
-    if (!isPlaying) {
-      window.open(oboeVideos[currentIndex].youtubeUrl, "_blank");
-    }
   };
 
   const currentVideo = oboeVideos[currentIndex];
+  const videoId = getYouTubeVideoId(currentVideo.youtubeUrl);
   const thumbnail = getYouTubeThumbnail(currentVideo.youtubeUrl);
+  
+  // Scale factor - increase this number to make everything bigger (e.g., 1.2 = 20% larger)
+  const scale = 1.0; // Adjust this value to scale the entire player
 
   return (
     <div className="mt-10">
       <h3 className="text-white text-[24px] font-bold mb-5">Oboe</h3>
-      <div className="relative max-w-2xl mx-auto">
+      <div className="relative max-w-2xl mx-auto" style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}>
         {/* Player container - relative positioning for absolute children */}
         <div className="relative w-full">
           {/* Base player image */}
@@ -120,71 +128,96 @@ const OboeSection = () => {
             className="w-full h-auto"
           />
 
-          {/* YouTube thumbnail overlay - positioned on the screen area */}
-          {/* Adjust these percentages based on where the screen is on your player image */}
+          {/* YouTube video/thumbnail overlay - positioned on the screen area */}
+          {/* 
+            TO ADJUST POSITION: Change the percentages below (top, left, right, bottom)
+            TO ADJUST SIZE: Change the percentages or use specific pixel values
+            Example: top-[12%] left-[8%] right-[8%] bottom-[48%]
+          */}
           <div 
-            className="absolute top-[15%] left-[10%] right-[10%] bottom-[45%] overflow-hidden cursor-pointer group"
-            onClick={() => window.open(currentVideo.youtubeUrl, "_blank")}
+            className="absolute top-[15%] left-[10%] right-[10%] bottom-[45%] overflow-hidden"
             style={{
-              // Adjust these values to match your player screen position
-              // top, left, right, bottom are approximate - adjust as needed
+              // You can also use specific pixel values here if percentages don't work well
+              // top: '60px', left: '40px', right: '40px', bottom: '200px'
             }}
           >
-            {thumbnail ? (
-              <img
-                src={thumbnail}
-                alt={currentVideo.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            {isPlaying && videoId ? (
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+                title={currentVideo.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
               />
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-[#0d1140] to-[#1a1f5e] flex items-center justify-center">
-                <div className="text-center">
-                  <svg
-                    className="w-12 h-12 mx-auto mb-2 text-secondary"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-                  </svg>
-                  <p className="text-secondary text-xs">YouTube Video</p>
+              <div 
+                className="w-full h-full cursor-pointer group"
+                onClick={togglePlayPause}
+              >
+                {thumbnail ? (
+                  <img
+                    src={thumbnail}
+                    alt={currentVideo.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-[#0d1140] to-[#1a1f5e] flex items-center justify-center">
+                    <div className="text-center">
+                      <svg
+                        className="w-12 h-12 mx-auto mb-2 text-secondary"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                      </svg>
+                      <p className="text-secondary text-xs">YouTube Video</p>
+                    </div>
+                  </div>
+                )}
+                {/* Play overlay on hover */}
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+                  <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+                    <svg
+                      className="w-8 h-8 text-white ml-1"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             )}
-            {/* Play overlay on hover */}
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
-                <svg
-                  className="w-8 h-8 text-white ml-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-            </div>
           </div>
 
           {/* Video info overlay - adjust position as needed */}
+          {/* 
+            TO ADJUST: Change bottom percentage or use specific pixel value
+            Example: bottom: '180px' or bottom-[35%]
+          */}
           <div 
             className="absolute bottom-[35%] left-[10%] right-[10%] text-center"
-            style={{
-              // Adjust bottom percentage to position above buttons
-            }}
           >
             <h3 className="text-white font-bold text-[18px] mb-1 truncate">{currentVideo.title}</h3>
             <p className="text-secondary text-[12px] truncate">{currentVideo.description}</p>
           </div>
 
           {/* Control buttons - positioned absolutely on the player */}
+          {/* 
+            TO ADJUST BUTTON SIZES: Change w-12 h-12 (width/height classes)
+            Example: w-16 h-16 for larger buttons, w-10 h-10 for smaller
+            TO ADJUST BUTTON POSITIONS: Change bottom, left, right percentages
+            Example: bottom-[12%] left-[18%] for different positions
+          */}
+          
           {/* Previous button */}
           <button
             onClick={prevVideo}
             className="absolute bottom-[15%] left-[20%] w-12 h-12 hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Previous video"
-            style={{
-              // Adjust these percentages to match button positions on your player
-              // You may need to fine-tune based on your player.png design
-            }}
           >
             <img src={prevBtn} alt="Previous" className="w-full h-full object-contain" />
           </button>
