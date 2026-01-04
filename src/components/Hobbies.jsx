@@ -113,7 +113,7 @@ const OboeSection = () => {
   const thumbnail = getYouTubeThumbnail(currentVideo.youtubeUrl);
   
   // Scale factor - increase this number to make everything bigger (e.g., 1.2 = 20% larger)
-  const scale = 1.0; // Adjust this value to scale the entire player
+  const scale = 0.7; // Adjust this value to scale the entire player
 
   return (
     <div className="mt-10">
@@ -135,7 +135,7 @@ const OboeSection = () => {
             Example: top-[12%] left-[8%] right-[8%] bottom-[48%]
           */}
           <div 
-            className="absolute top-[15%] left-[10%] right-[10%] bottom-[45%] overflow-hidden"
+            className="absolute top-[15%] left-[9%] right-[8%] bottom-[54%] overflow-hidden"
             style={{
               // You can also use specific pixel values here if percentages don't work well
               // top: '60px', left: '40px', right: '40px', bottom: '200px'
