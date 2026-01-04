@@ -202,12 +202,12 @@ const OboeSection = () => {
             className="absolute bottom-[29%] left-[10%] right-[10%] text-center"
           >
             <h3 className="text-black font-bold text-[31px] mb-1 truncate">{currentVideo.title}</h3>
-            <p className="text-black text-[12px] truncate">{currentVideo.description}</p>
+            <p className="text-black text-[20px] truncate">{currentVideo.description}</p>
           </div>
           
           <button
             onClick={prevVideo}
-            className="scale-200 absolute bottom-[15%] left-[20%] w-20 h-20 hover:scale-220 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[15%] left-[20%] w-[200px] h-[200px] hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Previous video"
           >
             <img src={prevBtn} alt="Previous" className="w-full h-full object-contain" />
@@ -215,7 +215,7 @@ const OboeSection = () => {
 
           <button
             onClick={togglePlayPause}
-            className="scale-200 absolute bottom-[15%] left-1/2 -translate-x-1/2 w-24 h-24 hover:scale-220 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-[240px] h-[240px] hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             <img 
@@ -227,13 +227,16 @@ const OboeSection = () => {
 
           <button
             onClick={nextVideo}
-            className="scale-200 absolute bottom-[15%] right-[20%] w-20 h-20 hover:scale-220 transition-transform cursor-pointer z-10"
+            className="absolute bottom-[15%] right-[20%] w-[200px] h-[200px] hover:scale-110 transition-transform cursor-pointer z-10"
             aria-label="Next video"
           >
             <img src={nextBtn} alt="Next" className="w-full h-full object-contain" />
           </button>
         </div>
       </div>
+      <p className="text-secondary text-[17px] mt-6 max-w-2xl">
+        I like to make oboe covers in my free time, play this player to see some covers.
+      </p>
     </div>
   );
 };
