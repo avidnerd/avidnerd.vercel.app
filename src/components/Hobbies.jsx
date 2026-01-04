@@ -199,10 +199,10 @@ const OboeSection = () => {
             Example: bottom: '180px' or bottom-[35%]
           */}
           <div 
-            className="absolute bottom-[25%] left-[10%] right-[10%] text-center"
+            className="absolute bottom-[29%] left-[10%] right-[10%] text-center"
           >
-            <h3 className="text-white font-bold text-[18px] mb-1 truncate">{currentVideo.title}</h3>
-            <p className="text-secondary text-[12px] truncate">{currentVideo.description}</p>
+            <h3 className="text-black font-bold text-[31px] mb-1 truncate">{currentVideo.title}</h3>
+            <p className="text-black text-[12px] truncate">{currentVideo.description}</p>
           </div>
 
           {/* Control buttons - positioned absolutely on the player */}
