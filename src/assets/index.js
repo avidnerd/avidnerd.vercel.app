@@ -32,6 +32,7 @@ import mdscribe from './mediscribe.png'
 import driver from "./driver_fat.png";
 import tripguide from "./tripguide.png";
 import explore_msh from "./explore_millburn.png";
+import essex_cty from "./essex_cty_proof.png";
 
 // Sky pictures
 import sky1 from "./1.jpeg";
@@ -108,6 +109,7 @@ export {
   explore_msh,
   driver,
   tripguide,
+  essex_cty,
   sky1,
   player,
   playBtn,

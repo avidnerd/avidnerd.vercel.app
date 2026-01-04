@@ -21,6 +21,7 @@ import {
     pd,
     mdscribe,
     explore_msh,
+    essex_cty,
   } from "../assets";
   
   export const navLinks = [
@@ -146,18 +147,6 @@ import {
       ],
     },
     {
-      title: "President & Founder",
-      company_name: "STEM Outreach Club",
-      icon: soc,
-      iconBg: "#9cedff",
-      date: "Feb 2024 - Present",
-      points: [
-        "Developing web applications using React.js and other related technologies for small businesses around the community.",
-        "Organizing various STEM workshops, district-wide events, and coding classes to children.",
-        "Organizing donations and fundraisers such as laptop donations and raising money for STEM ed organizations",
-      ],
-    },
-    {
       title: "Competitive Programmer",
       company_name: "USACO/Codeforces",
       icon: usaco,
@@ -179,6 +168,68 @@ import {
         "For my 2024-2025 research project, I am working with the Collins Lab at MIT to use a novel ensemble ML model to design de novo drug candidates effective against Methicillin Resistant Staphylococcus Aureus.",
         "My solution will incorporate explainability in order to understand the mechanisms of the produced drug candidates.",
         "I am also developing an in vivo efficacy predictor to reduce the drug development timeline."
+      ],
+    },
+    {
+      title: "Officer to President",
+      company_name: "Computer Science Integration Initiative (CSII)",
+      icon: null,
+      iconBg: "#E6DEDD",
+      date: "Aug 2024 - Present",
+      points: [
+        "National finalist for the American Computer Science League Competition.",
+        "Lead editor and designer of inaugural edition of school CS magazine Catalyst, now chief editor.",
+        "Taught AI/ML basics and AI ethics.",
+        "Recruited 102 new members.",
+        "Led members through Kaggle competitions.",
+        "Leading competitive programming lessons and contests.",
+        "Initiating tech drive to donate used computers and technology to families in need.",
+      ],
+    },
+    {
+      title: "Scientific Researcher",
+      company_name: "Mount Sinai Health System",
+      icon: null,
+      iconBg: "#E6DEDD",
+      date: "Aug 2025 - Present",
+      points: [
+        "Working with a mentor on full research project to use artificial intelligence to design drugs protective against Alzheimer's Disease and age-related diseases.",
+      ],
+    },
+    {
+      title: "Chapter Lead + Member of National Council \"AI Advisory Board\"",
+      company_name: "Encode Justice",
+      icon: null,
+      iconBg: "#E6DEDD",
+      date: "Jun 2024 - Present",
+      points: [
+        "Encode Justice is a coalition of youth activists and changemakers fighting to preserve human rights, accountability, and justice under AI, especially as algorithms are all too often deployed to erode civil liberties.",
+        "Working on fighting for informed AI policy that addresses automated bias and discrimination through political advocacy, community organizing, and content creation.",
+        "Helping research and draft original policy proposals regarding specific state issues for Encode Justice's internal, youth-led AI policy think tank.",
+        "Lobbying for the Policy team's proposals by meeting with legislators statewide.",
+        "Developing AI ethics curriculum for our workshops at hackathons, schools, and other forums in New Jersey.",
+      ],
+    },
+    {
+      title: "Founder & President",
+      company_name: "STEM Outreach Club",
+      icon: soc,
+      iconBg: "#9cedff",
+      date: "Feb 2024 - Present",
+      points: [
+        "Coordinated biweekly coding lessons; initiated partnerships with 3 small businesses and directed development of websites for them.",
+        "Spearheaded collaboration with county health office to build a healthcare chatbot, expanding access to health services; featured in local media, used by x residents.",
+        "Organized fundraisers to support tech nonprofits.",
+      ],
+    },
+    {
+      title: "Educator",
+      company_name: "Meaningful Teens",
+      icon: null,
+      iconBg: "#E6DEDD",
+      date: "Jan 2024 - Present",
+      points: [
+        "I am a volunteer at Project Udaan, whose mission is to offer free tutoring to underprivileged students in India to help them grow and develop their reading, mathematics, and communication skills.",
       ],
     },
     // {
@@ -228,10 +279,10 @@ import {
       description: "Received a perfect score on the PSAT, earning an opportunity to advance in the competition for a National Merit Scholarship",
     },
     {
-      title: "National Recognition Program",
-      issuer: "College Board",
+      title: "International Psychology Olympiad Higher Distinction Award",
+      issuer: "IPsyO",
       date: "Aug 2025",
-      description: "Recognized for outstanding academic achievement",
+      description: "Studied a full college-level psychology curriculum and scored top 5% to top 10% scored on comprehensive objective test",
     },
     {
       title: "AP Scholar with Distinction",
@@ -243,7 +294,7 @@ import {
       title: "University of Chicago Book Award",
       issuer: "The University of Chicago",
       date: "Jun 2025",
-      description: "Given to a student in recognition of outstanding academic achievement, community engagement, and an intellectual curiosity to draw connections across disciplines.",
+      description: "In recognition of outstanding academic achievement, community engagement, and an intellectual curiosity to draw connections across disciplines.",
     },
     {
       title: "Blue Ocean Entrepreneurship Competition Top 10",
@@ -267,7 +318,7 @@ import {
       title: "Terra North Jersey Science Fair 2025",
       issuer: "Terra",
       date: "Mar 2025",
-      description: "Presented original bioinformatics research on computationally designing de novo antibiotics. Bioinformatics - 2nd Place Award ($75), Association for Computing and Machinery Award",
+      description: "Bioinformatics Category- 2nd Place Award ($75), Association for Computing and Machinery Award",
     },
     {
       title: "Penn EcoVenture Challenge 2024",
@@ -303,13 +354,13 @@ import {
       title: "Terra North Jersey Science Fair 2024",
       issuer: "Terra North Jersey Science Fair",
       date: "2024",
-      description: "Project: A Novel Method of Detecting Fatigue Induced by Driving from EEG Data Yale Science and Engineering Award, Helmer Volunteer Award for True Potential (real world impact)",
+      description: "Yale Science and Engineering Award, Helmer Volunteer Award for True Potential (real world impact)",
     },
     {
       title: "Toshiba Exploravision Honorable Mention 2024",
       issuer: "Toshiba",
       date: "2024",
-      description: "Top 10% of all projects submitted (2000+ projects total). Proposal and design for biohybrid nanorobots to combat rheumatoid arthritis.",
+      description: "Top 10% of 2000+ projects. Proposal and design for biohybrid nanorobots to combat rheumatoid arthritis.",
     },
   ];
 
@@ -439,6 +490,49 @@ import {
       ],
       image: mdscribe,
       source_code_link: "https://github.com/",
+    },
+    {
+      name: "ECOPHM Assistant",
+      description:
+        "The STEM Outreach Club is collaborating with the Essex County Office of Public Health to create an AI chatbot that can retrieve information about various healthcare services for the benefit of all Essex County residents. I am leading a team of ~10 student volunteers from the STEM Outreach Club to help in the development of the chatbot.",
+      tags: [
+        {
+          name: "ai",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "chatbot",
+          color: "green-text-gradient",
+        },
+        {
+          name: "healthcare",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: essex_cty,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "Doctrino",
+      description:
+        "I'm happy to announce that I recently created Doctrino, a project I'm working on to record medical visits, extract insights and action items from them and help patients stay on top of their health. Right now, Doctrino records a visit, produces a structured summary (diagnosis, advice, symptoms), and our on-device agent pulls out medications, doses, labs, imaging, and other recommended follow-up tasks. It turns those into tasks with reminders that are synced with Apple's calendar, along with the option of sending reminders to complete tasks through Doctrino's notification system. This is the first version of Doctrino which I'm working on expanding to support a full on-device health agent to help people manage their health appropriately.",
+      tags: [
+        {
+          name: "healthcare",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "ai",
+          color: "green-text-gradient",
+        },
+        {
+          name: "ios",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: null,
+      source_code_link: "https://www.youtube.com/watch?v=PTtvaf1tOHU",
+      youtube_link: "https://www.youtube.com/watch?v=PTtvaf1tOHU",
     },
   ];
   
