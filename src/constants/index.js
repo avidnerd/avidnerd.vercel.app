@@ -128,7 +128,7 @@ import {
       title: "Scientific Researcher",
       company_name: "Mount Sinai Health System",
       icon: sinai,
-      iconBg: "#E6DEDD",
+      iconBg: "#FFFFFF",
       date: "Aug 2025 - Present",
       points: [
         "Working with a mentor on full research project to use artificial intelligence to design drugs protective against Alzheimer's Disease and age-related diseases.",
@@ -138,7 +138,7 @@ import {
       title: "Officer to President",
       company_name: "Computer Science Integration Initiative (CSII)",
       icon: csii,
-      iconBg: "#E6DEDD",
+      iconBg: "#000000",
       date: "Aug 2024 - Present",
       points: [
         "National finalist for the American Computer Science League Competition.",
@@ -154,7 +154,7 @@ import {
       title: "Chapter Lead + Member of National Council \"AI Advisory Board\"",
       company_name: "Encode Justice",
       icon: encode,
-      iconBg: "#E6DEDD",
+      iconBg: "#1a2b57",
       date: "Jun 2024 - Present",
       points: [
         "Encode Justice is a coalition of youth activists and changemakers fighting to preserve human rights, accountability, and justice under AI, especially as algorithms are all too often deployed to erode civil liberties.",
@@ -192,7 +192,7 @@ import {
       title: "Educator",
       company_name: "Meaningful Teens",
       icon: teens,
-      iconBg: "#E6DEDD",
+      iconBg: "#FFFFFF",
       date: "Jan 2024 - Present",
       points: [
         "I am a volunteer at Project Udaan, whose mission is to offer free tutoring to underprivileged students in India to help them grow and develop their reading, mathematics, and communication skills.",
