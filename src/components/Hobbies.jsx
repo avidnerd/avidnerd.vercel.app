@@ -374,7 +374,7 @@ const ArtGallery = () => {
           )}
         </div>
 
-        <div className="flex items-center justify-center gap-6 mt-6">
+        <div className="flex items-center justify-center gap-6 mt-2">
           <button
             onClick={prevArt}
             className="w-12 h-12 rounded-full bg-black-100 hover:bg-opacity-80 flex items-center justify-center transition-all group"
@@ -589,7 +589,7 @@ const Hobbies = () => {
         <SkyGallery />
       </div>
 
-      <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <h3 className="text-white text-[24px] font-bold mb-5">Memory Athletics</h3>
           <p className="text-secondary text-[17px] mb-8">
