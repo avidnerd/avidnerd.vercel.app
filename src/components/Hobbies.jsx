@@ -164,7 +164,7 @@ const OboeSection = () => {
     <div className="mt-10">
       <h3 className="text-white text-[24px] font-bold mb-5">Oboe</h3>
       <p className="text-secondary text-[17px] mb-8">
-        I like to make oboe covers in my free time, play this player to see some of my favorite covers!
+        I like to make oboe covers in my free time, here are some of my favorite covers!
       </p>
       <div className="relative max-w-2xl" style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}>
         <div className="relative w-full">
@@ -291,23 +291,18 @@ const MemoryAthleticsCard = () => {
           <div className="grid grid-cols-2 gap-6">
             <div className="text-center">
               <p className="text-secondary text-[14px] mb-2">Speed Cards</p>
-              <p className="text-white text-[24px] font-bold">2:30</p>
+              <p className="text-white text-[24px] font-bold">5:37</p>
               <p className="text-secondary text-[12px] mt-1">52 cards</p>
-            </div>
-            <div className="text-center">
-              <p className="text-secondary text-[14px] mb-2">Binary Numbers</p>
-              <p className="text-white text-[24px] font-bold">15:00</p>
-              <p className="text-secondary text-[12px] mt-1">1000 digits</p>
             </div>
             <div className="text-center">
               <p className="text-secondary text-[14px] mb-2">Random Words</p>
               <p className="text-white text-[24px] font-bold">10:00</p>
-              <p className="text-secondary text-[12px] mt-1">200 words</p>
+              <p className="text-secondary text-[12px] mt-1">150 words</p>
             </div>
             <div className="text-center">
               <p className="text-secondary text-[14px] mb-2">Numbers</p>
               <p className="text-white text-[24px] font-bold">12:00</p>
-              <p className="text-secondary text-[12px] mt-1">500 digits</p>
+              <p className="text-secondary text-[12px] mt-1">100 digits</p>
             </div>
           </div>
         </div>
@@ -594,11 +589,11 @@ const Hobbies = () => {
         <SkyGallery />
       </div>
 
-      <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <h3 className="text-white text-[24px] font-bold mb-5">Memory Athletics</h3>
           <p className="text-secondary text-[17px] mb-8">
-            My memory training achievements and times
+            For fun, I like to participate in memory athletics and memory training! Here are my record times for these events.
           </p>
           <MemoryAthleticsCard />
         </div>
