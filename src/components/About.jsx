@@ -52,12 +52,12 @@ const About = () => {
         className='mt-4 text-secondary text-[17px]
         max-w-3xl leading-[30px]'
       >
-        I'm a 16 year old who aspires to be an innovator, researcher,
-        and a machine learning engineer. I love research and am interested
-        in the applications of machine learning to biology/biotech. 
-        I have extensive experience in Python and Java, surface level experience in HTML, CSS, and
-        React, and a rudimentary understanding
-        of algorithms/competitive programming.
+         Hi! I’m Subhi Stephan, a senior at Millburn High School. As an avid technology enthusiast,
+         I am passionate about leveraging the power of innovation to create impactful solutions. 
+         I am particularly interested in applications of AI to the biomedical sciences, computational neuroscience, 
+         the ethics of AI, and entrepreneurial innovation in the healthcare field. I am also an oboist + vintage 
+         music enthusiast and enjoy making technology to serve the community!
+
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

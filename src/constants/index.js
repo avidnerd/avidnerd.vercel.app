@@ -56,24 +56,24 @@ import {
   
   const services = [
     {
-      title: "Machine Learning Researcher",
+      title: "AI Research",
       icon: web,
     },
 
     {
-      title: "Competitive Programmer",
+      title: "Computational Neuroscience",
       icon: mobile,
     },
 
     {
-      title: "Python Programmer and Web Developer",
+      title: "Tech for Good",
       icon: creator,
     },
 
-    // {
-    //   title: "Entrepreneur (coming soon)",
-    //   icon: backend,
-    // },
+    {
+      title: "Entrepreneurship",
+      icon: backend,
+    },
 
   ];
   
