@@ -584,12 +584,12 @@ const Hobbies = () => {
         </motion.p>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
         <OboeSection />
         <SkyGallery />
       </div>
 
-      <div className="-mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="-mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
           <h3 className="text-white text-[24px] font-bold mb-5">Memory Athletics</h3>
           <p className="text-secondary text-[17px] mb-8">
