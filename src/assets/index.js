@@ -31,7 +31,7 @@ import home_page from "./home_page.png";
 import sinai from "./sinai.jpg";
 import encode from "./encode.jpeg";
 import teens from "./teens.jpeg";
-import tech_drive from "./tech_drive.png";
+import tech_drive from "./tech_drive.jpg";
 
 import pd from "./plant_doctor.png";
 import mdscribe from './mediscribe.png'
