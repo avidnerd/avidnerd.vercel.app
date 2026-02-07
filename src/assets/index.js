@@ -26,9 +26,12 @@ import soc from "./company/soc.png";
 import kessler from "./company/kessler.png";
 import mit from "./company/mit.png";
 import csii from "./csii.jpg";
+import njsrs from "./njsrs.png";
+import home_page from "./home_page.png";
 import sinai from "./sinai.jpg";
 import encode from "./encode.jpeg";
 import teens from "./teens.jpeg";
+import tech_drive from "./tech_drive.png";
 
 import pd from "./plant_doctor.png";
 import mdscribe from './mediscribe.png'
@@ -87,6 +90,8 @@ export {
   mobile,
   web,
   github,
+  njsrs,
+  home_page,
   menu,
   close,
   css,
@@ -151,5 +156,6 @@ export {
   art10,
   art11,
   art12,
+  tech_drive,
   frame,
 };

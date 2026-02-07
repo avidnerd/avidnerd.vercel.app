@@ -25,6 +25,9 @@ import {
     sinai,
     encode,
     teens,
+    home_page,
+    njsrs,
+    tech_drive,
   } from "../assets";
   
   export const navLinks = [
@@ -125,6 +128,17 @@ import {
   
   const experiences = [
     {
+      title: "Tech Committee Chair, Logistics Co-Chair",
+      company_name: "New Jersey Science Research Symposium",
+      icon: njsrs,
+      iconBg: "#FFFFFF",
+      date: "November 2025 - Present",
+      points: [
+        "The New Jersey Science Research Symposium (NJSRS) was created by myself and members of my science research class to fill a critical gap in science research opportunities for high school students in New Jersey.",
+        "With the suspension of JSHS (Junior Science and Humanities Symposium) this year, we recognized the need for a platform where students could continue to showcase their experimental research, receive valuable feedback, and compete for recognition."
+      ],
+    },
+    {
       title: "Scientific Researcher",
       company_name: "Mount Sinai Health System",
       icon: sinai,
@@ -211,16 +225,7 @@ import {
         "Demonstrates skill in Python data science modules as well as understanding of electroencephelography (EEG) signals.",
       ],
     },
-    // {
-    //   title: "Founder and CEO",
-    //   company_name: "xxx",
-    //   icon: null,
-    //   iconBg: "#E6DEDD",
-    //   date: "April 2024 - Present",
-    //   points: [
-    //     "Coming Soon!",
-    //   ],
-    // },
+
   ];
   
   const testimonials = [
@@ -363,7 +368,7 @@ import {
         },
       ],
       image: pd,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/avidnerd/PlantDoctor",
     },
     {
       name: "Driver Fatigue Detector",
@@ -408,9 +413,9 @@ import {
       source_code_link: "https://exploremillburnshorthills.org/public-art/public-art-trail/",
     },
     {
-      name: "AMR Research @ MIT",
+      name: "Antibiotic Drug Design Research @ MIT",
       description:
-        "Coming soon!",
+        "I worked with the Collins Lab at MIT to design a novel ensemble ML model to generate de novo drug candidates effective against Methicillin Resistant Staphylococcus Aureus.",
       tags: [
         {
           name: "python",
@@ -447,7 +452,7 @@ import {
         },
       ],
       image: mdscribe,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/avidnerd/MediScribe",
     },
     {
       name: "ECOPHM Assistant",
@@ -468,7 +473,7 @@ import {
         },
       ],
       image: essex_cty,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/avidnerd/ECOPHMChatbot",
     },
     {
       name: "Doctrino",
@@ -492,6 +497,50 @@ import {
       source_code_link: "https://www.youtube.com/watch?v=PTtvaf1tOHU",
       youtube_link: "https://www.youtube.com/watch?v=PTtvaf1tOHU",
     },
+
+    {
+      name: "New Jersey Science Research Symposium Website",
+      description:
+        "I built, designed, and deployed the website and user portals for the New Jersey Science Research Symposium, a statewide science fair for high school students. ",
+      tags: [
+        {
+          name: "research",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "react",
+          color: "green-text-gradient",
+        },
+        {
+          name: "science fair",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: home_page,
+      source_code_link: "https://github.com/avidnerd/njsrs-site",
+    },
+
+    {
+      name: "Computer Science Club Tech Drive",
+      description:
+        "Organizer of my computer science club's inaugural Tech Drive. We held the drive on January 24th, 2026, and collected old technology from the community to distribute to families in need. I was in charge of advertising, collecting donations at the tech drive, taking inventory, and dropping off the donations to our nonprofit partner, Retechnology. We collected 41 computers and monitors, 6 printers, 20 phones and tablets, and various other items. Due to the high reception, my team and I are currently working on building a computer lab in Newark using the collected technology for residents to access.",
+      tags: [
+        {
+          name: "tech drive",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "community service",
+          color: "green-text-gradient",
+        },
+        {
+          name: "computer",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: tech_drive,
+    }
+
   ];
   
   export { services, technologies, experiences, testimonials, projects, awards };
