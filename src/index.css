@@ -1,0 +1,249 @@
+/*
+  Sources are declared explicitly rather than auto-detected. Tailwind v4 would
+  otherwise scan every non-ignored file in the project, including the markdown
+  READMEs, and mint utilities for words that merely look like class names.
+*/
+@import "tailwindcss" source(none);
+@source "../index.html";
+@source "./**/*.{js,jsx}";
+
+/*
+  Palette is sampled directly out of the stippled Haleakala painting that fills
+  the hero, so the page and the artwork share pigments rather than merely sitting
+  next to each other. Warm paper, warm ink, no true black and no true white.
+*/
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+
+  /*
+    A cool, neutral paper rather than a warm cream, and a blue accent. The
+    earlier cream-and-orange pairing read as somebody else's brand; this keeps
+    the paper feeling like paper while letting the accent stand apart from the
+    gold of the hero painting instead of blending into it.
+  */
+  --color-paper: #f4f3ef;
+  --color-paper-2: #eceae4;
+  --color-paper-3: #e0ded6;
+
+  --color-ink: #15181c;
+  --color-ink-2: #3f464e;
+  --color-ink-3: #656c74;
+
+  /*
+    Two accents, because no single blue clears 4.5:1 against both the paper and
+    the near-black footer. `accent` is for ink-on-paper, `accent-soft` for the
+    dark sections. Measured: 5.9:1 and 6.4:1 respectively.
+  */
+  --color-accent: #1e5f9e;
+  --color-accent-soft: #5b9fe3;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+/*
+  Paper grain. A very low-contrast noise field laid over the cream so large flat
+  areas do not read as flat digital fill. Cheap: one inline SVG turbulence,
+  no image request, no layout cost.
+*/
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+}
+
+/* The blinking block cursor that punctuates typed lines. */
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Colour comes from a bg-* utility at the call site, not from here. */
+.cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  translate: 0 0.18em;
+  animation: blink 1.05s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+
+/*
+  Sections fade up once they reach the trigger line, driven from ui.jsx.
+
+  The hidden state is applied by a class that JavaScript itself adds on mount,
+  rather than being the default. If the script fails to load or run, no element
+  is ever hidden and the page renders as plain static content — the alternative
+  is a portfolio that arrives completely blank for anyone whose JS broke.
+*/
+.js .reveal {
+  opacity: 0;
+  translate: 0 18px;
+  transition:
+    opacity 0.5s ease,
+    translate 0.5s ease;
+}
+
+.js .reveal.shown {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    translate: 0 0;
+    transition: none;
+  }
+}
+
+/*
+  Carousel entrance. Direction-aware, so a project arriving from "next" slides in
+  from the right and one from "prev" from the left, which keeps the sense of a
+  row being moved along rather than panels blinking in place.
+*/
+@keyframes carousel-in-next {
+  from {
+    opacity: 0;
+    translate: 2.5rem 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes carousel-in-prev {
+  from {
+    opacity: 0;
+    translate: -2.5rem 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.carousel-in-next {
+  animation: carousel-in-next 0.45s ease-out both;
+}
+
+.carousel-in-prev {
+  animation: carousel-in-prev 0.45s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-in-next,
+  .carousel-in-prev {
+    animation: none;
+  }
+}
+
+/* Visually hidden but available to screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*
+  Contact panorama drift.
+
+  The track holds four copies: the image, a mirrored copy, then that pair again.
+  A panorama's left and right edges do not match, so butting copies together
+  would show a hard seam every loop. Mirroring every second copy makes both
+  joins continuous, because each edge meets its own reflection.
+
+  Travelling from -50% to 0 moves the scene left to right. Transform only, so it
+  stays on the compositor and never triggers layout.
+*/
+@keyframes pano-drift {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.pano-track {
+  animation: pano-drift 150s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pano-track {
+    animation: none;
+    transform: translateX(-25%);
+  }
+}
+
+/*
+  A facet window arriving: a short rise and settle, not a slide.
+
+  Animates `scale` and `opacity` only, never `transform`. A window's position
+  comes from an inline `translate`, and a filled animation on `transform` would
+  outrank that inline style and drop every window in the same place, collapsing
+  both the centring and the cascade.
+*/
+@keyframes window-in {
+  from {
+    opacity: 0;
+    scale: 0.95;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.window-in {
+  animation: window-in 0.32s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .window-in {
+    animation: none;
+  }
+}
