@@ -119,12 +119,6 @@ export const work = [
       "A basic version of YC's Self-Maintaining APIs request for startups. The RFS is written provider-side, where the provider pushes fixes out to its customers. I built the consumer side, since the reason the problem exists is that providers mostly do not do this. Two detection surfaces: spec diffing against the copy cached on the previous run, which needs no infrastructure and runs as a scheduled GitHub Action, and a reverse proxy that groups raw paths into endpoints with a prefix trie and accumulates per-path statistics into hourly buckets.",
     stats: [
     ],
-    note: {
-      label: "what it does not yet show",
-      text: "The traffic detector scores recall 1.000 and precision 1.000 on a synthetic benchmark of 11 planted changes, with 0 findings when the null is run through both windows.",
-      after:
-        "The benchmark is mine and the traffic is independent by construction, so this shows the machinery is calibrated. It says nothing about production.",
-    },
     tags: ["go", "statistics", "openapi", "developer tools"],
     links: [{ label: "source", href: "https://github.com/avidnerd/apidrift" }],
   },
@@ -308,6 +302,11 @@ export const facets = [
     photos: [
       { src: "/img/hobbies/naro.jpg", cap: "naro, third course" },
       { src: "/img/hobbies/tatte.jpg", cap: "tatte, boston" },
+      { src: "/img/hobbies/arsicault.jpg", cap: "arsicault, best bakery in the us" },
+      { src: "/img/hobbies/state-bird.jpg", cap: "fried quail, state bird provisions" },
+      { src: "/img/hobbies/juju.jpg", cap: "lamb chops, juju durham" },
+      { src: "/img/hobbies/tadaima.jpg", cap: "strawberry sando + matcha, tadaima" },
+      { src: "/img/hobbies/twelve-matcha.jpg", cap: "iced matcha, 12 matcha" },
     ],
   },
 ];
