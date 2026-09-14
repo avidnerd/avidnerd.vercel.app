@@ -76,19 +76,18 @@ export const work = [
     role: "Personal project",
     period: "2026",
     blurb:
-      "A local-first study planner that closes a task only when it finds proof the work happened. Compass breaks a semester goal into subgoals and checks each one against the student's own Google Workspace, GitHub and Canvas accounts. A step closes when something actually turns up there: a document that changed, an email that went out, a commit, a calendar block that got used.",
-    detail:
-      "It all runs locally against a single SQLite file. There is no server to deploy, model calls are restricted to free endpoints, and every account is connected read-only. You can still tick a step off by hand, but that is the fallback.",
+      "A local-first study planner manages all your tasks and verifies that you are actually doing your work. Compass breaks a goal into subgoals and checks each one against the student's own Google Workspace, GitHub and Canvas accounts. Compass hosts live focus sessions, measures your task output, asnd evaluates your productivity.",
+    detail: "",
     stats: [
-      ["Top 5", "Corgi Hackathon, YC Startup School"]
+      
     ],
     tags: ["python", "fastapi", "react", "sqlite", "local-first"],
     links: [{ label: "source", href: "https://github.com/avidnerd/compass" }],
     image: "/img/work/compass.jpg",
     imageAlt:
-      "Compass evidence card showing what it observed in Google Drive and Docs, what it could not observe, and the confidence score behind the verdict.",
+      "Compass evidence card after a focus session, showing the percentage of time doing focused work and the output it detected during the focus session.",
     imageCaption:
-      "An evidence card. Every screenshot in the repo is a real screen from a running instance.",
+      "",
   },
   {
     id: "njsrs",
@@ -267,6 +266,11 @@ export const facets = [
       { src: "/img/hobbies/kilauea.jpg", cap: "kīlauea iki crater floor, big island hawa'ii" },
       { src: "/img/hobbies/ithaca.jpg", cap: "cornell, ithaca" },
       { src: "/img/hobbies/south-mountain.jpg", cap: "south mountain" },
+      { src: "/img/hobbies/lake-overlook.jpg", cap: "lake overlook from the summit" },
+      { src: "/img/hobbies/valley-overlook.jpg", cap: "looking out over the valley" },
+      { src: "/img/hobbies/sutro-cliffs.jpg", cap: "cliffs at lands end, san francisco" },
+      { src: "/img/hobbies/trail-bridge.jpg", cap: "stone bridge in the woods" },
+      { src: "/img/hobbies/grass-trail.jpg", cap: "overgrown summer trail" },
     ],
   },
   {
