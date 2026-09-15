@@ -15,7 +15,7 @@ export default function Research() {
         <ul className="mt-10 grid gap-10 md:grid-cols-3">
           {research.map((r, i) => (
             <Reveal as="li" key={r.org} delay={i * 90}>
-              <h3 className="font-serif text-xl leading-snug text-ink">{r.org}</h3>
+              <h3 className="font-display text-xl leading-snug text-ink">{r.org}</h3>
               <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-accent">
                 {r.lab}
               </p>

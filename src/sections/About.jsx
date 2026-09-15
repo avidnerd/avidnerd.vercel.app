@@ -208,7 +208,7 @@ function FacetWindow({ facet, onClose, onFocus, z, offset, isDesktop }) {
       </div>
 
       <div className="p-6 sm:p-7 lg:min-h-0 lg:overflow-y-auto">
-        <h3 className="font-serif text-[clamp(1.3rem,2.6vw,1.85rem)] leading-tight text-ink">
+        <h3 className="font-display text-[clamp(1.3rem,2.6vw,1.85rem)] leading-tight text-ink">
           {facet.title}
         </h3>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-2">{facet.text}</p>
@@ -348,9 +348,9 @@ function WhoIAm() {
 }
 
 /*
-  Aligned hard to the left rather than centred like the rest of the page. The
-  portrait and the opening line sit on plain paper; only the "who i am" block
-  below them stands on the painting, at full strength with no wash over it.
+  Centred on the same column as the rest of the page. The portrait and the
+  opening line sit on plain paper; only the "who i am" block below them stands
+  on the painting, at full strength with no wash over it.
 */
 export default function About() {
   return (
@@ -358,10 +358,10 @@ export default function About() {
       id="about"
       className="grain relative scroll-mt-20 border-b border-ink/10 bg-paper-2"
     >
-      <div className="relative px-6 pt-24 sm:px-10 sm:pt-28 lg:px-14">
-        <div className="max-w-6xl">
+      <div className="relative px-6 pt-24 sm:px-10 sm:pt-28">
+        <div className="mx-auto max-w-6xl">
           <Reveal>
-            <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-12 lg:gap-16">
               <figure className="w-[12rem] shrink-0 sm:w-[15rem]">
                 <div className="overflow-hidden border border-ink/12 bg-paper-3">
                   <img
@@ -376,7 +376,7 @@ export default function About() {
                 </figcaption>
               </figure>
 
-              <p className="max-w-[38rem] font-serif text-[clamp(1.5rem,3.1vw,2.35rem)] leading-[1.4] text-ink">
+              <p className="max-w-[50rem] flex-1 font-display text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.35] text-ink">
                 {about[0]}
               </p>
             </div>

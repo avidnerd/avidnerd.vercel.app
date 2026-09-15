@@ -46,7 +46,7 @@ export default function Contact() {
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-paper/50">
             contact
           </p>
-          <h2 className="mt-6 max-w-3xl font-serif text-[clamp(2rem,6vw,4rem)] leading-[1.05] text-paper">
+          <h2 className="mt-6 max-w-3xl font-display text-[clamp(2rem,6vw,4rem)] leading-[1.05] text-paper">
             If you would like to connect or share anything cool you're building, please do! I'm down to talk about anything.
           </h2>
         </Reveal>

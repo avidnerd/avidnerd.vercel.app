@@ -47,7 +47,7 @@ export default function Hero() {
           </p>
         )}
 
-        <h1 className="font-serif text-[clamp(2.75rem,9vw,6.5rem)] leading-[0.95] text-paper">
+        <h1 className="font-display text-[clamp(2.75rem,9vw,6.5rem)] leading-[0.95] text-paper">
           {profile.name}
         </h1>
 

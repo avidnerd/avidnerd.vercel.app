@@ -14,7 +14,7 @@
 */
 @theme {
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
 
   /*
     A cool, neutral paper rather than a warm cream, and a blue accent. The
@@ -54,6 +54,16 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-mono);
+}
+
+/*
+  Headings. A grotesque with some quirk rather than a book serif: the serif-on-
+  cream pairing read as another product's voice. Tightened because a sans at
+  display sizes looks loose at default tracking.
+*/
+.font-display {
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
 ::selection {
