@@ -56,7 +56,7 @@ function Project({ project, index }) {
 
       {/* body */}
       <div className="min-w-0">
-        <h3 className="font-serif text-[clamp(1.75rem,4vw,2.6rem)] leading-tight text-ink">
+        <h3 className="font-display text-[clamp(1.75rem,4vw,2.6rem)] leading-tight text-ink">
           {name}
         </h3>
         <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-3">
@@ -108,7 +108,7 @@ function Project({ project, index }) {
             <span className="absolute -top-[0.62rem] left-5 bg-paper px-2 font-mono text-[11px] text-ink-2">
               {note.label}
             </span>
-            <p className="font-serif text-[clamp(1.1rem,2vw,1.4rem)] leading-snug text-ink">
+            <p className="font-display text-[clamp(1.1rem,2vw,1.4rem)] leading-snug text-ink">
               {note.text}
             </p>
             {note.after && (
