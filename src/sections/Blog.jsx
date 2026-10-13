@@ -54,7 +54,7 @@ export default function Blog() {
   usePageTitle("Blog — Subhi Stephan");
 
   return (
-    <div className="grain relative min-h-[70vh] bg-paper">
+    <div className="grain relative min-h-[70vh]">
       <div className="mx-auto max-w-6xl px-6 pb-24 pt-32 sm:px-10 sm:pb-28 sm:pt-40">
         <SectionHead index="04" label="blog" />
 

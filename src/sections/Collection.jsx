@@ -23,7 +23,7 @@ export default function Collection({ slug }) {
   // a worse answer than saying so.
   if (!collection) {
     return (
-      <div className="grain relative min-h-[70vh] bg-paper">
+      <div className="grain relative min-h-[70vh]">
         <div className="mx-auto max-w-6xl px-6 pb-24 pt-32 sm:px-10 sm:pt-40">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
             404
@@ -45,7 +45,7 @@ export default function Collection({ slug }) {
   const { posts } = collection;
 
   return (
-    <div className="grain relative min-h-[70vh] bg-paper">
+    <div className="grain relative min-h-[70vh]">
       <div className="mx-auto max-w-6xl px-6 pb-24 pt-32 sm:px-10 sm:pb-28 sm:pt-40">
         <Reveal>
           <Link

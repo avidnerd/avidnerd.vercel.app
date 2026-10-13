@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Nav from "./components/Nav";
+import Sky from "./components/Sky";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Work from "./sections/Work";
@@ -47,6 +48,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <Sky />
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />

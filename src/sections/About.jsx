@@ -356,7 +356,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="grain relative scroll-mt-20 border-b border-ink/10 bg-paper-2"
+      className="grain relative scroll-mt-20 border-b border-ink/10"
     >
       <div className="relative px-6 pt-24 sm:px-10 sm:pt-28">
         <div className="mx-auto max-w-6xl">

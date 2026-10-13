@@ -22,13 +22,13 @@
     the paper feeling like paper while letting the accent stand apart from the
     gold of the hero painting instead of blending into it.
   */
-  --color-paper: #f4f3ef;
-  --color-paper-2: #eceae4;
-  --color-paper-3: #e0ded6;
+  --color-paper: #e9f2fb;
+  --color-paper-2: #dce8f5;
+  --color-paper-3: #cddcee;
 
   --color-ink: #15181c;
   --color-ink-2: #3f464e;
-  --color-ink-3: #656c74;
+  --color-ink-3: #575e66;
 
   /*
     Two accents, because no single blue clears 4.5:1 against both the paper and
@@ -51,9 +51,52 @@ html {
 }
 
 body {
-  background: var(--color-paper);
+  /* A sky that deepens slightly toward the top, so the white clouds show. */
+  background: linear-gradient(to bottom, #d6e7f8, var(--color-paper) 70%) fixed;
   color: var(--color-ink);
   font-family: var(--font-mono);
+}
+
+/* Drifting clouds; see src/components/Sky.jsx. */
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  left: 0;
+  width: 260px;
+  height: 90px;
+  /* Three overlapping puffs on a flat base make one cloud. */
+  background:
+    radial-gradient(closest-side, #fff 70%, transparent) 30px 20px / 110px 80px no-repeat,
+    radial-gradient(closest-side, #fff 70%, transparent) 95px 0 / 120px 100px no-repeat,
+    radial-gradient(closest-side, #fff 70%, transparent) 150px 25px / 100px 70px no-repeat,
+    radial-gradient(closest-side, #fff 75%, transparent) 10px 45px / 240px 45px no-repeat;
+  filter: blur(6px);
+  animation-name: drift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-320px) scale(var(--scale));
+  }
+  to {
+    transform: translateX(calc(100vw + 60px)) scale(var(--scale));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud {
+    animation-play-state: paused;
+  }
 }
 
 /*

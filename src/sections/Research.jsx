@@ -9,7 +9,7 @@ import { Reveal, SectionHead } from "../components/ui";
 */
 export default function Research() {
   return (
-    <div className="grain relative border-y border-ink/10 bg-paper-2">
+    <div className="grain relative border-y border-ink/10">
       <div className="mx-auto max-w-6xl px-6 py-24 sm:px-10 sm:py-28">
         <SectionHead id="research" index="02" label="research" />
         <ul className="mt-10 grid gap-10 md:grid-cols-3">
