@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { profile } from "../data/content";
 
+/*
+  Section links are hashes on the homepage and root-relative everywhere else, so
+  "work" from a blog post returns home and then scrolls, rather than hunting for
+  a #work that is not on the page. `blog` is a route, so it uses a router Link.
+*/
 const LINKS = [
   ["about", "#about"],
   ["work", "#work"],
   ["research", "#research"],
+  ["blog", "/blog"],
   ["contact", "#contact"],
 ];
 
@@ -15,15 +22,21 @@ const LINKS = [
   While still over the hero the bar carries its own soft dark gradient rather
   than a solid fill. Hero copy passing underneath is dimmed by it, which keeps
   the nav labels readable without boxing the painting in.
+
+  Only the homepage has a hero. Every other route starts on paper, so the bar
+  begins in its landed state there instead of rendering pale type on cream.
 */
 export default function Nav() {
-  const [landed, setLanded] = useState(false);
+  const { pathname } = useLocation();
+  const onHome = pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+  const landed = !onHome || scrolled;
 
   useEffect(() => {
     // Switches almost immediately. Waiting until the hero is cleared leaves a
     // long stretch where hero copy scrolls directly behind the wordmark, and no
     // amount of scrim separates overlapping text from text.
-    const onScroll = () => setLanded(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -54,27 +67,44 @@ export default function Nav() {
           landed ? "text-ink-2" : "text-paper/90"
         }`}
       >
-        <a
-          href="#top"
+        <Link
+          to={onHome ? "#top" : "/"}
           className={`tracking-[0.14em] transition-colors ${
             landed ? "text-ink hover:text-accent" : "text-paper hover:text-accent-soft"
           }`}
         >
           subhi
-        </a>
+        </Link>
 
         <div className="flex items-center gap-5 sm:gap-7">
-          {LINKS.map(([label, href]) => (
-            <a
-              key={href}
-              href={href}
-              className={`hidden transition-colors sm:inline ${
-                landed ? "hover:text-accent" : "hover:text-accent-soft"
-              }`}
-            >
-              {label}
-            </a>
-          ))}
+          {LINKS.map(([label, href]) => {
+            const isRoute = href.startsWith("/");
+            const className = `transition-colors ${
+              // The blog link is the one section that exists as its own page, so
+              // it stays reachable on phones where the hash links are hidden.
+              isRoute ? "inline" : "hidden sm:inline"
+            } ${landed ? "hover:text-accent" : "hover:text-accent-soft"} ${
+              isRoute && pathname.startsWith(href)
+                ? landed
+                  ? "text-accent"
+                  : "text-accent-soft"
+                : ""
+            }`;
+
+            return isRoute ? (
+              <Link key={href} to={href} className={className}>
+                {label}
+              </Link>
+            ) : (
+              <a
+                key={href}
+                href={onHome ? href : `/${href}`}
+                className={className}
+              >
+                {label}
+              </a>
+            );
+          })}
           <a
             href={profile.resume}
             target="_blank"

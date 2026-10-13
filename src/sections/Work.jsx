@@ -16,6 +16,7 @@ function Project({ project, index }) {
     period,
     blurb,
     detail,
+    bullets = [],
     stats = [],
     badge,
     note,
@@ -75,6 +76,19 @@ function Project({ project, index }) {
           </p>
         )}
 
+        {bullets.length > 0 && (
+          <ul className="mt-5 max-w-2xl space-y-2.5">
+            {bullets.map((b) => (
+              <li
+                key={b}
+                className="relative pl-5 font-mono text-[13px] leading-relaxed text-ink-2 before:absolute before:left-0 before:text-accent before:content-['–']"
+              >
+                {b}
+              </li>
+            ))}
+          </ul>
+        )}
+
         {stats.length > 0 && (
           <div className="mt-8 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
             {stats.map(([value, label]) => (
@@ -93,12 +107,14 @@ function Project({ project, index }) {
         {/* Programme affiliation, as a logo lockup rather than another stat. */}
         {badge && (
           <div className="mt-7 flex items-center gap-3">
-            <img
-              src={badge.src}
-              alt={badge.alt}
-              loading="lazy"
-              className="h-[15px] w-auto"
-            />
+            {badge.src && (
+              <img
+                src={badge.src}
+                alt={badge.alt}
+                loading="lazy"
+                className="h-[15px] w-auto"
+              />
+            )}
             <span className="font-mono text-[12px] text-ink-3">{badge.text}</span>
           </div>
         )}

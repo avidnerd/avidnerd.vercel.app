@@ -184,6 +184,178 @@ body {
   }
 }
 
+/*
+  Article body.
+
+  The rest of the site is mono at small sizes, which suits labels and short
+  blurbs but punishes anyone reading a thousand words. Posts get the display
+  family at a normal weight and a longer measure instead; mono stays for code,
+  where it means something.
+*/
+.post-body {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-ink-2);
+}
+
+.post-body > * + * {
+  margin-top: 1.25em;
+}
+
+.post-body h2,
+.post-body h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--color-ink);
+  margin-top: 2.25em;
+}
+
+.post-body h2 {
+  font-size: 1.5rem;
+}
+
+.post-body h3 {
+  font-size: 1.2rem;
+}
+
+.post-body strong {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.post-body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+.post-body a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.post-body ul,
+.post-body ol {
+  padding-left: 1.4em;
+}
+
+.post-body ul {
+  list-style: disc;
+}
+
+.post-body ol {
+  list-style: decimal;
+}
+
+.post-body li + li {
+  margin-top: 0.5em;
+}
+
+.post-body li::marker {
+  color: var(--color-ink-3);
+}
+
+.post-body blockquote {
+  border-left: 2px solid var(--color-accent);
+  padding-left: 1.1em;
+  color: var(--color-ink-3);
+}
+
+.post-body code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--color-paper-3);
+  padding: 0.15em 0.4em;
+}
+
+/* Code blocks scroll rather than wrap: a broken line of code is a lie. */
+.post-body pre {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 1.1rem 1.25rem;
+  overflow-x: auto;
+}
+
+.post-body pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.post-body hr {
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  margin-top: 2.5em;
+}
+
+/*
+  Images get a little more air than a paragraph and a hairline border, so a
+  photograph on cream reads as placed rather than as a stray attachment.
+*/
+.post-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+}
+
+.post-body p:has(> img) {
+  margin-top: 2em;
+}
+
+/*
+  Two or more images written on consecutive lines — one Markdown paragraph, no
+  blank line between them — become a small side-by-side pair rather than two
+  full-width images stacked down the page.
+
+  Capped well short of the measure, because the point of a pair is that they are
+  glanceable next to each other. Aspect ratios are left alone and the row is
+  top-aligned: cropping somebody's artwork to make a tidy grid is the wrong
+  trade.
+*/
+.post-body p:has(> img + img) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: flex-end;
+}
+
+/*
+  A shared height rather than a shared width. Paired images are rarely the same
+  shape — a portrait drawing next to a landscape painting — and matching their
+  widths leaves one ending halfway up the other. Matching heights instead lets
+  each keep its own proportions and sit on a common baseline, with no cropping.
+*/
+.post-body p:has(> img + img) img {
+  height: 15rem;
+  width: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 34rem) {
+  .post-body p:has(> img + img) img {
+    height: 10rem;
+  }
+}
+
+/*
+  An italic line directly under an image becomes its caption: mono, small and
+  grey, matching the figcaptions on the homepage. Written in Markdown as the
+  image followed by *one italic line* on the very next line.
+*/
+.post-body img + em {
+  display: block;
+  margin-top: 0.7em;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-style: normal;
+  line-height: 1.5;
+  color: var(--color-ink-3);
+}
+
 /* Visually hidden but available to screen readers. */
 .sr-only {
   position: absolute;

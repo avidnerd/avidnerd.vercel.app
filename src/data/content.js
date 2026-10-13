@@ -21,6 +21,34 @@ export const about = [
 ];
 
 export const work = [
+    {
+    id: "scrubplus",
+    name: "Scrub+",
+    role: "Touchless 3D medical imaging & surgical planning",
+    period: "Oct 2026 — present",
+    blurb:
+      "First place winner at HackNC 2026. A browser-based spatial computing platform for touchless interaction with real 3D CT scans through hand gestures and natural-language voice commands, built to take the friction out of reaching and navigating medical imaging in a sterile operating room.",
+    bullets: [
+      "Wrote a GPU-accelerated volumetric ray-marching renderer in Three.js and GLSL, with anatomical segmentation overlays and interactive cross-sections.",
+      "Built a voxel-based geometry engine that measures tumor margins, anatomical distances, vessel intersections and remaining organ volume straight from the segmented CT.",
+      "Implemented a constraint-aware optimizer that runs a coarse-to-fine search over candidate cutting planes, balancing tumor clearance, liver preservation and vascular intersections.",
+      "Used Gemini to translate spoken requests into deterministic anatomical queries, measurements and 3D navigation.",
+      "Built a gesture pipeline on MediaPipe with adaptive smoothing, gesture-state logic and an experimental neural classifier for partially occluded hand landmarks.",
+      "Built on real data from the Medical Segmentation Decathlon, with extra segmentation from TotalSegmentator.",
+    ],
+    badge: {
+      text: "First place, HackNC 2026",
+    },
+    tags: ["three.js", "glsl", "mediapipe", "gemini api"],
+    links: [
+      { label: "live demo", href: "https://scrubplus.vercel.app/" },
+      { label: "devpost", href: "https://devpost.com/software/scrub-d67fm5" },
+    ],
+    image: "/img/work/scrubplus.jpg",
+    imageAlt:
+      "Demoing Scrub+ at HackNC 2026: pointing at a 3D CT rendering on a laptop set up on crates in a crowded gym.",
+    imageCaption: "Demoing Scrub+ at HackNC 2026. Photo: UNC Computer Science.",
+  },
   {
     id: "inoki",
     name: "Inoki Labs",
@@ -54,6 +82,7 @@ export const work = [
     imageCaption:
       "An example of the original policy (collapsed at 2.04s), versus the same policy after retraining against the failure that our search found.",
   },
+  
   {
     id: "aeroflux",
     name: "AeroFlux",
@@ -162,6 +191,10 @@ export const research = [
 ];
 
 export const honors = [
+  {
+    title: "HackNC 2026",
+    detail: "First place for Scrub+, a touchless 3D medical imaging and surgical planning platform.",
+  },
   {
     title: "IEEE MIT URTC 2026",
     detail: "First-author paper accepted, pending publication in IEEE Xplore.",
